@@ -1,2 +1,2 @@
-﻿52187
-/Applications/Godot_mono.app/Contents/MacOS/Godot
+﻿43643
+/usr/lib64/godot/godot.x11.opt.tools.64.llvm.mono
