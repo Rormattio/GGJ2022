@@ -1,3 +1,5 @@
 [gd_scene format=2]
 
-[node name="Run" type="Node2D"]
+[node name="Area2D" type="Area2D"]
+
+[node name="Run" type="Node2D" parent="."]
