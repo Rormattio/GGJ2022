@@ -1,2 +1,0 @@
-﻿43643
-/usr/lib64/godot/godot.x11.opt.tools.64.llvm.mono
