@@ -11,5 +11,4 @@ export_presets.cfg
 data_*/
 
 
-assets/drawing/*.import
-assets/pixelart/*.import
+assets/*/*.import
