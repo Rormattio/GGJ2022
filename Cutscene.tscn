@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/fonts/montreal/Montreal-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Cutscene.gd" type="Script" id=2]
+[ext_resource path="res://assets/pixel_art/namebox.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
@@ -22,23 +23,11 @@ position = Vector2( 49, 417 )
 
 [node name="DialogueBox" type="Sprite" parent="."]
 
-[node name="NameBox" type="Sprite" parent="."]
-
 [node name="DialogueBG" type="ColorRect" parent="."]
 margin_top = 400.0
 margin_right = 1280.0
 margin_bottom = 720.0
 color = Color( 0.14902, 0.0666667, 0.0666667, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="NameBG" type="ColorRect" parent="."]
-margin_left = 60.0
-margin_top = 370.0
-margin_right = 280.0
-margin_bottom = 430.0
-color = Color( 0.407843, 0.0901961, 0.0901961, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -54,6 +43,10 @@ autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="NameBox" type="Sprite" parent="."]
+position = Vector2( 170, 399 )
+texture = ExtResource( 3 )
 
 [node name="NameText" type="Label" parent="."]
 margin_left = 75.0
