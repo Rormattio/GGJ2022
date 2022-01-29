@@ -91,6 +91,7 @@ func _on_PlayerParticle_body_entered(body):
 	# Repair only possible in particle mode
 	if "Repair" in body.name:
 		life += 3
+		life = clamp(life, 0, total_life)
 	else:
 		life -= 1
 	# Make object disappear

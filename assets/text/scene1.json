@@ -1,0 +1,12 @@
+{
+  "001": {"name":"Bra", "expression":"drawing/bra.png", "background":"drawing/background.png","text":"Vite, vite par ici ! Venez nous aider!"},
+  "009": {"name":"Bang", "expression":"drawing/bang_surprised.png", "background":"drawing/background.png","text":"Nous voici, que se passe-t-il?"},
+  "010": {"name":"Bra", "expression":"drawing/bra.png", "background":"drawing/background.png","text":"C’est Ket-Chan… mon épouse… elle ne va pas bien !"},
+  "011": {"name":"Ket", "expression":"drawing/Ket.png", "background":"drawing/background.png","text":"Mon bébé est presque là…"},
+  "012": {"name":"Bra", "expression":"drawing/bra.png", "background":"drawing/background.png","text":"Juste ciel ! Faites quelque chose !"},
+  "013": {"name":"Bang", "expression":"drawing/bang_happy.png", "background":"drawing/background.png","text":"Bien sûr ! Notre ambulance est juste là ! On vous emmène à la maternité illico presto !"},
+  "014": {"name":"Bang", "expression":"drawing/bang_happy.png", "background":"drawing/background.png","text":"N’est-ce pas Big ?!"},
+  "015": {"name":"Big", "expression":"drawing/big_flushed.png", "background":"drawing/background.png","text":"..."},
+  "016": {"name":"Ket", "expression":"drawing/ket.png", "background":"drawing/background.png","text":"Oooooh… Je sens qu’il veut sortir…"},
+  "017": {"name":"Bra", "expression":"drawing/big.png", "background":"drawing/background.png","text":"Dépêchez-vous, je vous en prie !"}
+}
