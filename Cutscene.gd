@@ -9,10 +9,15 @@ signal dialogue_loaded(data)
 var dialogue_dict
 var _index_current = 0
 var _len_dialogue_dict
+var _config_file
+var _next_scene
 
-
+func _init_config(config_file, next_scene):
+	_config_file = config_file
+	_next_scene = next_scene
+	
 func _ready():
-	dialogue_dict = load_dialogue("res://assets/text/intro.json").values()
+	dialogue_dict = load_dialogue(_config_file).values()
 	_len_dialogue_dict = len(dialogue_dict)
 	play_dialogue(dialogue_dict)
 	$DialogueBG.color.a = 0.5
@@ -49,6 +54,9 @@ func _input(event):
 	if event.is_action_pressed("ui_accept"):
 		_index_current += 1
 		if _index_current == _len_dialogue_dict:
-			get_tree().change_scene("res://Transition.tscn")
+			get_tree().change_scene(_next_scene)
+			var level = get_parent().get_node("Cutscene")
+			get_parent().remove_child(level)
+			level.call_deferred("free")
 		else:
 			play_dialogue(dialogue_dict)
