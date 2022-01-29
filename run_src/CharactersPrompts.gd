@@ -28,6 +28,7 @@ func load_dialogue(file_path) -> Dictionary:
 func play_dialogue(dialog_dict):
 	$DialogueText.text = dialog_dict[_index_current].text
 	$NameText.text = dialog_dict[_index_current].name
+	$HeadImg.texture = load("res://assets/"+dialog_dict[_index_current].expression)
 
 func _on_DialogLineTimer_timeout():
 	_index_current += 1
@@ -35,6 +36,7 @@ func _on_DialogLineTimer_timeout():
 		# Freeze DialogLineTimer, as there are no more dialogs
 		$DialogueText.text = ''
 		$NameText.text = ''
+		$HeadImg.texture = null
 		$DialogLineTimer.one_shot = true
 	else:
 		play_dialogue(dialogue_dict)
