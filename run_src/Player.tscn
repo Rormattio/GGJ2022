@@ -12,7 +12,7 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "wave",
 "speed": 5.0
@@ -30,7 +30,7 @@ extents = Vector2( 8.66667, 6 )
 extents = Vector2( 15.6667, 119.333 )
 
 [node name="Player" type="Node2D"]
-position = Vector2( 255, 274 )
+position = Vector2( 260, 274 )
 scale = Vector2( 3, 3 )
 script = ExtResource( 4 )
 __meta__ = {
@@ -38,9 +38,10 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -0.999994, 28 )
+scale = Vector2( 0.637037, 0.334259 )
 frames = SubResource( 1 )
 animation = "wave"
-frame = 7
 playing = true
 
 [node name="PlayerParticle" type="Area2D" parent="."]
