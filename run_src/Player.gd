@@ -93,7 +93,7 @@ func _on_PlayerParticle_body_entered(body):
 		life += 3
 		life = clamp(life, 0, total_life)
 	else:
-		life -= 1
+		life -= 3
 	# Make object disappear
 	body.queue_free()
 
