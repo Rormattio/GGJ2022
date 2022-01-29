@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Run.gd" type="Script" id=1]
 [ext_resource path="res://run_src/Obstacle.tscn" type="PackedScene" id=2]
 [ext_resource path="res://run_src/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://run_src/Movement.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -23,3 +24,5 @@ rotation = 0.694353
 [node name="RigidBody2D" parent="." instance=ExtResource( 2 )]
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 4 )]

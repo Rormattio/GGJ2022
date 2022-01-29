@@ -5,9 +5,6 @@
 [ext_resource path="res://assets/pixel_art/vaisseau_base3.png" type="Texture" id=3]
 [ext_resource path="res://run_src/Player.gd" type="Script" id=4]
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 43, 26.5 )
-
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ) ],
@@ -16,27 +13,29 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Player" type="Area2D"]
-position = Vector2( 435, 348 )
-gravity = 0.0
-script = ExtResource( 4 )
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 43, 26.5 )
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 255, 274 )
 __meta__ = {
 "_edit_group_": true
 }
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 3, -1.5 )
-shape = SubResource( 2 )
-
-[node name="Viewport" type="Viewport" parent="."]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 5, 5 )
 frames = SubResource( 1 )
 animation = "base"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Player" type="Area2D" parent="."]
+gravity = 0.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2( 3, -1.5 )
 shape = SubResource( 2 )
 
-[connection signal="hit" from="." to="." method="_on_Player_hit"]
+[connection signal="hit" from="Player" to="Player" method="_on_Player_hit"]
