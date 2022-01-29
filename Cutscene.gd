@@ -16,8 +16,8 @@ func _ready():
 	_len_dialogue_dict = len(dialogue_dict)
 	play_dialogue(dialogue_dict)
 
-func _process(delta):
-	play_dialogue(dialogue_dict)
+#func _process(delta):
+#	play_dialogue(dialogue_dict)
 
 func load_dialogue(file_path) -> Dictionary:
 	# Parses a JSON file and returns it as a dictionary
@@ -32,8 +32,15 @@ func play_dialogue(dialog_dict):
 	$DialogueText.text = dialog_dict[_index_current].text
 	$NameText.text = dialog_dict[_index_current].name
 
+	var path = "res://assets/"+dialog_dict[_index_current].background
+	print(path)
+
+	$Background.texture = load("res://assets/"+dialog_dict[_index_current].background)
+
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
 		_index_current += 1
 		if _index_current == _len_dialogue_dict:
 			get_tree().change_scene("res://Run.tscn")
+		else:
+			play_dialogue(dialogue_dict)
