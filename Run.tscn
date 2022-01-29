@@ -15,9 +15,6 @@ _data = {
 script = ExtResource( 1 )
 obstacle_scene = ExtResource( 2 )
 
-[node name="RigidBody2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 969, 56 )
-
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 153, 213 )
 
