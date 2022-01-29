@@ -41,9 +41,10 @@ autoplay = true
 [node name="ParallaxBackground" parent="." instance=ExtResource( 4 )]
 
 [node name="TaxiTimer" type="Timer" parent="."]
+wait_time = 4.0
 
 [node name="ObstacleTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 0.5
 
 [node name="ObstaclePath" type="Path2D" parent="."]
 curve = SubResource( 1 )
