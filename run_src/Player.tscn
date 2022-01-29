@@ -39,9 +39,9 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -0.999994, 28 )
-scale = Vector2( 0.637037, 0.334259 )
 frames = SubResource( 1 )
 animation = "particle"
+frame = 2
 playing = true
 
 [node name="PlayerParticle" type="Area2D" parent="."]
