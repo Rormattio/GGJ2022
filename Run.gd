@@ -7,8 +7,8 @@ var score
 func _ready():
 	randomize()
 
-func _process(delta):
-	pass
+#func _process(delta):
+#	pass
 #	move_local_x(-speed*delta)
 
 
