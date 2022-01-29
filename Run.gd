@@ -58,7 +58,7 @@ func _on_ObstacleTimer_timeout():
 	obstacle.rotation = direction
 
 	# Choose the velocity.
-	var velocity = Vector2(rand_range(150.0, 250.0), 0.0)
+	var velocity = Vector2(rand_range(0.0, 1000.0), 0.0)
 	obstacle.linear_velocity = velocity.rotated(direction)
 
 func _process(delta):
