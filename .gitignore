@@ -10,6 +10,9 @@ export_presets.cfg
 .mono/
 data_*/
 
+# Imports
+assets/*/*.import
 
-assets/drawing/*.import
-assets/pixelart/*.import
+# MacOS specific
+.DS_store
+*/.DS_store
