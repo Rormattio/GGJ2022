@@ -1,9 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/fonts/montreal/Montreal-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Cutscene.gd" type="Script" id=2]
 
 [sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
 size = 40
 font_data = ExtResource( 1 )
 
@@ -12,12 +16,28 @@ script = ExtResource( 2 )
 
 [node name="DialogueBox" type="Label" parent="."]
 margin_left = 49.0
-margin_top = 417.0
+margin_top = 434.0
 margin_right = 1247.0
-margin_bottom = 709.0
+margin_bottom = 673.0
 custom_fonts/font = SubResource( 1 )
 text = "onche onche kom c tryst"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="NameBox" type="Label" parent="."]
+margin_left = 49.0
+margin_top = 375.0
+margin_right = 89.0
+margin_bottom = 425.0
+custom_fonts/font = SubResource( 2 )
+text = "Nom Place Au le deur"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Sprite" parent="."]
+
+[node name="CharacterImage" type="Sprite" parent="."]
+position = Vector2( 49, 417 )
