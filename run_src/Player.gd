@@ -70,7 +70,12 @@ func _process(delta):
 
 func _on_PlayerParticle_body_entered(body):
 	emit_signal("hit")
-	life -= 1
+	# Repair only possible in particle mode
+	if "Repair" in body.name:
+		life += 3
+	else:
+		life -= 1
+	# Make object disappear
 	body.queue_free()
 
 
@@ -79,10 +84,13 @@ func _on_PlayerWave_body_entered(body):
 		emit_signal("hit")
 		life -= 1
 		body.queue_free()
-	elif body.is_in_group("asteroides"):
+	# No effect if repair or asteroid 
+	else:
 		pass
-
+	# Objects do not disappear in wave mode
 
 
 func game_over():
 	hide()
+
+

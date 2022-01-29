@@ -3,7 +3,7 @@ extends Node
 export(PackedScene) var obstacle_scene
 export(PackedScene) var taxi_scene
 export(PackedScene) var character_prompt 
-
+export(PackedScene) var repair_scene
 var score
 
 var speed = 400
@@ -29,6 +29,7 @@ func new_game():
 	# Spawn ingame dialog
 	var character_dialog = character_prompt.instance()
 	add_child(character_dialog)
+	$RepairTimer.start()
 
 func _on_ObstacleTimer_timeout():
 	 # Choose a random location on Path2D.
@@ -82,3 +83,26 @@ func _on_TaxiTimer_timeout():
 	# Choose the velocity.
 	var velocity = Vector2(rand_range(speed, speed + 100), 50)
 	taxi.linear_velocity = velocity.rotated(direction)
+
+func _on_RepairTimer_timeout():
+	 # Choose a random location on Path2D.
+	var repair_spawn_location = get_node("ObstaclePath/ObstacleSpawnLocation");
+	repair_spawn_location.offset = randi()
+
+	# Create a Obstacle instance and add it to the scene.
+	var repair = repair_scene.instance()
+	add_child(repair)
+
+	# Set the mob's direction perpendicular to the path direction.
+	var direction = repair_spawn_location.rotation + PI/2 #+ PI / 2
+
+	# Set the mob's position to a random location.
+	repair.position = repair_spawn_location.position
+
+	# Add some randomness to the direction.
+	#direction += rand_range(-PI / 4, PI / 4)
+	repair.rotation = direction
+
+	# Choose the velocity.
+	var velocity = Vector2(rand_range(150.0, 250.0), 0.0)
+	repair.linear_velocity = velocity.rotated(direction)
