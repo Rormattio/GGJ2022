@@ -15,6 +15,7 @@ func _ready():
 	dialogue_dict = load_dialogue("res://assets/text/intro.json").values()
 	_len_dialogue_dict = len(dialogue_dict)
 	play_dialogue(dialogue_dict)
+	$DialogueBG.color.a = 0.5
 
 
 func load_dialogue(file_path) -> Dictionary:
@@ -29,6 +30,10 @@ func load_dialogue(file_path) -> Dictionary:
 func play_dialogue(dialog_dict):
 	$DialogueText.text = dialog_dict[_index_current].text
 	$NameText.text = dialog_dict[_index_current].name
+	if ($NameText.text == ""):
+		$NameBox.hide() 
+	else:
+		$NameBox.show()
 	$Background.texture = load("res://assets/"+dialog_dict[_index_current].background)
 	var size = $Background.texture.get_size()
 	var scale = Vector2((get_viewport_rect().size.x/size.x), (get_viewport_rect().size.y/size.y))
