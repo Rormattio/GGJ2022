@@ -1,31 +1,20 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Run.gd" type="Script" id=1]
 [ext_resource path="res://run_src/Obstacle.tscn" type="PackedScene" id=2]
 [ext_resource path="res://run_src/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://run_src/Movement.tscn" type="PackedScene" id=4]
-[ext_resource path="res://run_src/Movement.gd" type="Script" id=5]
 [ext_resource path="res://assets/sounds/scene_loop.wav" type="AudioStream" id=6]
 
-[sub_resource type="Curve2D" id=1]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -1, -2, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 357, 2, 0, 0, 0, 0, 359, 449, 0, 0, 0, 0, -1, 446, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, -1, -2 )
-}
-
-[node name="Run" type="Node2D"]
+[node name="Run" type="Node"]
 script = ExtResource( 1 )
 mob_scene = ExtResource( 2 )
 
-[node name="MobPath" type="Path2D" parent="."]
-curve = SubResource( 1 )
-
-[node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
-position = Vector2( -1, -2 )
-rotation = 0.694353
-
 [node name="RigidBody2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( 969, 56 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 153, 213 )
 
 [node name="MusicLoop" type="AudioStreamPlayer2D" parent="Player"]
 position = Vector2( -85, -91.3333 )
@@ -34,4 +23,3 @@ stream = ExtResource( 6 )
 autoplay = true
 
 [node name="ParallaxBackground" parent="." instance=ExtResource( 4 )]
-script = ExtResource( 5 )
