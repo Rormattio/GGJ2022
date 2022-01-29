@@ -8,17 +8,17 @@
 animations = [ {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
-"name": "asteroid_2",
+"name": "asteroid_1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
-"name": "asteroid_1",
+"name": "asteroid_2",
 "speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 21.0
+radius = 38.0
 height = 0.0
 
 [node name="RigidBody2D" type="RigidBody2D" groups=["asteroides"]]
