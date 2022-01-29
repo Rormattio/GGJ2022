@@ -15,7 +15,7 @@
   "014": {"name":"Big", "expression":"drawing/big_flushed.png", "background":"drawing/background.png","text":"..."},
   "015": {"name":"Bang", "expression":"drawing/bang.png", "background":"drawing/background.png","text":"Oui, toi aussi, je sais !"},
   "016": {"name":"Alarme", "expression":"", "background":"drawing/background.png","text":"WIOUWIOUWIOU"},
-  "017": {"name":"Big", "expression":"drawing/bang.png", "background":"drawing/background.png","text":"!!!"},
+  "017": {"name":"Big", "expression":"drawing/big.png", "background":"drawing/background.png","text":"!!!"},
   "018": {"name":"Bang", "expression":"drawing/bang_surprised.png", "background":"drawing/background.png","text":"Ohlalalalala !! Regarde les coordonnées GPS !! On est les seuls dans le coin, c’est pour nous !!"},
   "019": {"name":"Bang", "expression":"drawing/bang_surprised.png", "background":"drawing/background.png","text":"Notre première mission !"},
   "020": {"name":"Bang", "expression":"drawing/bang_happy.png", "background":"drawing/background.png","text":"Plus de simulation, c’est pas du chiqué, faut y aller !"}
