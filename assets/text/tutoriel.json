@@ -1,12 +1,12 @@
 {
-  "001": {"name":"Bang", "expression":"p_neutral", "text":"D’autres vaisseaux arrivent en face…"},
-  "002": {"name":"Bang", "expression":"p_neutral", "text":"Active le gyrophare pour qu’ils s’écartent ! C’est la touche [touche] !"},
-  "003": {"name":"Bang", "expression":"p_sad", "text":"Si on percute un vaisseau, on va endommager l’ambulance…"},
-  "004": {"name":"Bang", "expression":"p_sad", "text":"La jauge haut à gauche permet de suivre les dégâts !"},
-  "005": {"name":"Bang", "expression":"p_surprised", "text":"Ohlala, on va passer dans une ceinture d’astéroïdes…"},
-  "006": {"name":"Bang", "expression":"p_neutral", "text":"C’est l’heure d’utiliser le superpouvoir de l’ambulance !"},
-  "007": {"name":"Bang", "expression":"p_neutral", "text":"Passe en mode Onde ! C’est la touche [touche] !"},
-  "008": {"name":"Bang", "expression":"p_neutral", "text":"En onde, tu traverses les astéroïdes."},
-  "009": {"name":"Bang", "expression":"p_surprised", "text":"Mais tu peux toujours subir des dégâts si tu rencontres un vaisseau à bouclier électromagnétique !"},
-  "010": {"name":"Bang", "expression":"neutral", "text":"Oh, et tu ne peux pas activer ton gyrophare dans le mode onde !"}
+  "001": {"name":"Bang", "expression":"pixel_art/bang_pixel_base.png", "text":"D’autres vaisseaux arrivent en face…"},
+  "002": {"name":"Bang", "expression":"pixel_art/bang_pixel_base.png", "text":"Active le gyrophare pour qu’ils s’écartent ! C’est la touche [touche] !"},
+  "003": {"name":"Bang", "expression":"pixel_art/bang_pixel_sad.png", "text":"Si on percute un vaisseau, on va endommager l’ambulance…"},
+  "004": {"name":"Bang", "expression":"pixel_art/bang_pixel_sad.png", "text":"La jauge haut à gauche permet de suivre les dégâts !"},
+  "005": {"name":"Bang", "expression":"pixel_art/bang_pixel_surprised.png", "text":"Ohlala, on va passer dans une ceinture d’astéroïdes…"},
+  "006": {"name":"Bang", "expression":"pixel_art/bang_pixel_base.png", "text":"C’est l’heure d’utiliser le superpouvoir de l’ambulance !"},
+  "007": {"name":"Bang", "expression":"pixel_art/bang_pixel_base.png", "text":"Passe en mode Onde ! C’est la touche [touche] !"},
+  "008": {"name":"Bang", "expression":"pixel_art/bang_pixel_base.png", "text":"En onde, tu traverses les astéroïdes."},
+  "009": {"name":"Bang", "expression":"pixel_art/bang_pixel_surprised.png", "text":"Mais tu peux toujours subir des dégâts si tu rencontres un vaisseau à bouclier électromagnétique !"},
+  "010": {"name":"Bang", "expression":"pixel_art/bang_pixel_base.png", "text":"Oh, et tu ne peux pas activer ton gyrophare dans le mode onde !"}
 }
