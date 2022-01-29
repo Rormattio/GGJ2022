@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/pixel_art/vaisseau_base1.png" type="Texture" id=1]
 [ext_resource path="res://assets/pixel_art/vaisseau_base2.png" type="Texture" id=2]
@@ -9,9 +9,17 @@
 [ext_resource path="res://assets/pixel_art/vaisseau_onde4.png" type="Texture" id=7]
 [ext_resource path="res://assets/pixel_art/vaisseau_onde3.png" type="Texture" id=8]
 [ext_resource path="res://assets/pixel_art/vaisseau_onde5.png" type="Texture" id=9]
+[ext_resource path="res://assets/pixel_art/vaisseau_gyro1.png" type="Texture" id=10]
+[ext_resource path="res://assets/pixel_art/vaisseau_gyro3.png" type="Texture" id=11]
+[ext_resource path="res://assets/pixel_art/vaisseau_gyro2.png" type="Texture" id=12]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 10 ), ExtResource( 12 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "gyro",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "wave",
@@ -39,7 +47,8 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "particle"
+animation = "gyro"
+frame = 1
 playing = true
 
 [node name="PlayerParticle" type="Area2D" parent="."]
@@ -56,5 +65,15 @@ shape = SubResource( 2 )
 [node name="CollisionWave" type="CollisionShape2D" parent="PlayerWave"]
 shape = SubResource( 3 )
 
+[node name="GyroTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="GyroCooldown" type="Timer" parent="GyroTimer"]
+wait_time = 4.0
+one_shot = true
+
 [connection signal="body_entered" from="PlayerParticle" to="." method="_on_PlayerParticle_body_entered"]
 [connection signal="body_entered" from="PlayerWave" to="." method="_on_PlayerWave_body_entered"]
+[connection signal="timeout" from="GyroTimer" to="." method="_on_GyroTimer_timeout"]
+[connection signal="timeout" from="GyroTimer/GyroCooldown" to="." method="_on_GyroCooldown_timeout"]

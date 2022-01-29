@@ -1,6 +1,7 @@
 extends Node2D
 
 signal hit
+signal gyro
 
 export var local_speed = 400 # How fast the player will move (pixels/sec).
 var xspeed = 400
@@ -10,6 +11,7 @@ var total_life = 10
 var life = total_life
 var y_margin = 100
 var normal_xpos = 0.0
+var is_gyro_available = true
 
 func start(pos):
 	position = pos
@@ -29,9 +31,27 @@ func change_state():
 		y_margin = 100
 	$AnimatedSprite.play()
 
+func light_flashing_light():
+	emit_signal("gyro")
+	$AnimatedSprite.animation = "gyro"
+	is_gyro_available = false
+	$GyroTimer.start()
+
+func _on_GyroTimer_timeout():
+	$AnimatedSprite.animation = "particle"
+	$GyroTimer/GyroCooldown.start()
+
+func _on_GyroCooldown_timeout():
+	is_gyro_available = true
+
+
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
 		change_state()
+	elif event.is_action_pressed("special_action"):
+		if $AnimatedSprite.animation != "wave":
+			if is_gyro_available:
+				light_flashing_light()
 
 
 # Called when the node enters the scene tree for the first time.
