@@ -19,7 +19,7 @@ script = ExtResource( 2 )
 position = Vector2( 640, 360 )
 
 [node name="CharacterImage" type="Sprite" parent="."]
-position = Vector2( 49, 417 )
+position = Vector2( 251, 478 )
 
 [node name="DialogueBox" type="Sprite" parent="."]
 
