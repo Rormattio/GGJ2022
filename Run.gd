@@ -1,6 +1,8 @@
 extends Node
 
 export(PackedScene) var obstacle_scene
+export(PackedScene) var taxi_scene
+
 var score
 
 var speed = 400
@@ -22,6 +24,7 @@ func new_game():
 	#$Player.start($StartPosition.position)
 	#$StartTimer.start()
 	$ObstacleTimer.start()
+	$TaxiTimer.start()
 
 func _on_ObstacleTimer_timeout():
 	 # Choose a random location on Path2D.
@@ -39,7 +42,7 @@ func _on_ObstacleTimer_timeout():
 	obstacle.position = obstacle_spawn_location.position
 
 	# Add some randomness to the direction.
-	#direction += rand_range(-PI / 4, PI / 4)
+	direction += rand_range(-PI / 4, PI / 4)
 	obstacle.rotation = direction
 
 	# Choose the velocity.
@@ -51,3 +54,26 @@ func _process(delta):
 
 #func _on_ScoreTimer_timeout():
 #	score += 1
+
+
+func _on_TaxiTimer_timeout():
+	var taxi_spawn_location = get_node("ObstaclePath/ObstacleSpawnLocation");
+	taxi_spawn_location.offset = randi()
+
+	# Create a Obstacle instance and add it to the scene.
+	var taxi = taxi_scene.instance()
+	add_child(taxi)
+
+	# Set the mob's direction perpendicular to the path direction.
+	var direction = PI #+ PI / 2
+
+	# Set the mob's position to a random location.
+	taxi.position = taxi_spawn_location.position
+
+	# Add some randomness to the direction.
+#	direction += rand_range(-PI / 4, PI / 4)
+	taxi.rotation = direction
+
+	# Choose the velocity.
+	var velocity = Vector2(rand_range(speed, speed + 100), 50)
+	taxi.linear_velocity = velocity.rotated(direction)

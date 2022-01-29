@@ -18,15 +18,15 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 38.0
+radius = 21.0
 height = 0.0
 
-[node name="RigidBody2D" type="RigidBody2D"]
+[node name="RigidBody2D" type="RigidBody2D" groups=["asteroides"]]
 collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource( 3 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." groups=["asteroides"]]
 rotation = 3.14159
 frames = SubResource( 1 )
 animation = "asteroid_2"
@@ -34,13 +34,13 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["asteroides"]]
 shape = SubResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="." groups=["asteroides"]]
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
