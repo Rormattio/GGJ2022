@@ -90,7 +90,7 @@ func _on_TaxiTimer_timeout():
 	taxi.rotation = direction
 
 	# Choose the velocity.
-	var velocity = Vector2(rand_range(speed, speed + 100), 50)
+	var velocity = Vector2(rand_range(speed, speed + 300), 50)
 	taxi.linear_velocity = velocity.rotated(direction)
 
 func _on_RepairTimer_timeout():
