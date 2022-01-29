@@ -43,9 +43,8 @@ func _process(delta):
 #	pass
 
 
-func _on_Player_hit():
-	hide() # Player disappears after being hit.
+func _on_PlayerArea_body_entered(body):
+#	hide() # Player disappears after being hit.
 	emit_signal("hit")
 	# Must be deferred as we can't change physics properties on a physics callback.
-	$CollisionShape2D.set_deferred("disabled", true)
-
+#	$PlayerArea/CollisionShape2D.set_deferred("disabled", true)
