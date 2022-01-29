@@ -1,4 +1,6 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/sounds/intro.wav" type="AudioStream" id=1]
 
 [node name="Menu" type="Node2D"]
 
@@ -6,11 +8,17 @@
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 274.0
-margin_top = 211.0
-margin_right = 390.0
-margin_bottom = 225.0
+margin_left = 52.0001
+margin_top = 155.0
+margin_right = 168.0
+margin_bottom = 169.0
+rect_scale = Vector2( 10, 10 )
 text = "PIN PON PIN PON"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 617, 366 )
+stream = ExtResource( 1 )
+autoplay = true
