@@ -8,5 +8,5 @@
   "014": {"name":"Bang", "expression":"drawing/bang_happy.png", "background":"drawing/background.png","text":"N’est-ce pas Big ?!"},
   "015": {"name":"Big", "expression":"drawing/big_flushed.png", "background":"drawing/background.png","text":"..."},
   "016": {"name":"Ket", "expression":"drawing/ket.png", "background":"drawing/background.png","text":"Oooooh… Je sens qu’il veut sortir…"},
-  "017": {"name":"Bra", "expression":"drawing/big.png", "background":"drawing/background.png","text":"Dépêchez-vous, je vous en prie !"}
+  "017": {"name":"Bra", "expression":"drawing/bra.png", "background":"drawing/background.png","text":"Dépêchez-vous, je vous en prie !"}
 }
