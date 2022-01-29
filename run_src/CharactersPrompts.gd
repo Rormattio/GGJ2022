@@ -31,8 +31,10 @@ func play_dialogue(dialog_dict):
 
 func _on_DialogLineTimer_timeout():
 	_index_current += 1
-	if _index_current == _len_dialogue_dict:
+	if _index_current >= _len_dialogue_dict:
 		# Freeze DialogLineTimer, as there are no more dialogs
+		$DialogueText.text = ''
+		$NameText.text = ''
 		$DialogLineTimer.one_shot = true
 	else:
 		play_dialogue(dialogue_dict)
