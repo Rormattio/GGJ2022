@@ -18,7 +18,7 @@ func _ready():
 	dialogue_dict = load_dialogue(_config_file).values()
 	_len_dialogue_dict = len(dialogue_dict)
 	play_dialogue(dialogue_dict)
-	$DialogueBG.color.a = 0.5
+	$DialogueBG.color.a = 0.7
 
 
 func load_dialogue(file_path) -> Dictionary:
