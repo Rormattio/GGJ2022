@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Run.gd" type="Script" id=1]
 [ext_resource path="res://run_src/Obstacle.tscn" type="PackedScene" id=2]
 [ext_resource path="res://run_src/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://run_src/Movement.tscn" type="PackedScene" id=4]
 [ext_resource path="res://run_src/Movement.gd" type="Script" id=5]
+[ext_resource path="res://assets/sounds/scene_loop.wav" type="AudioStream" id=6]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -25,6 +26,12 @@ rotation = 0.694353
 [node name="RigidBody2D" parent="." instance=ExtResource( 2 )]
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
+
+[node name="MusicLoop" type="AudioStreamPlayer2D" parent="Player"]
+position = Vector2( -85, -91.3333 )
+scale = Vector2( 0.333333, 0.333333 )
+stream = ExtResource( 6 )
+autoplay = true
 
 [node name="ParallaxBackground" parent="." instance=ExtResource( 4 )]
 script = ExtResource( 5 )
