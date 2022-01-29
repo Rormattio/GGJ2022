@@ -37,10 +37,11 @@ func new_game():
 	#$StartTimer.start()
 	$ObstacleTimer.start()
 	$TaxiTimer.start()
-	# Spawn ingame dialog
-	var character_dialog = character_prompt.instance()
-	add_child(character_dialog)
 	$RepairTimer.start()
+	# Spawn ingame dialog
+	if (Global.scene_index == 0):
+		var character_dialog = character_prompt.instance()
+		add_child(character_dialog)
 
 func _on_ObstacleTimer_timeout():
 	 # Choose a random location on Path2D.
