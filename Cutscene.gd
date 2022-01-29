@@ -15,10 +15,8 @@ func _ready():
 	dialogue_dict = load_dialogue("res://assets/text/intro.json").values()
 	_len_dialogue_dict = len(dialogue_dict)
 	play_dialogue(dialogue_dict)
-	
+	$DialogueBG.color.a = 0.5
 
-func _process(delta):
-	play_dialogue(dialogue_dict)
 
 func load_dialogue(file_path) -> Dictionary:
 	# Parses a JSON file and returns it as a dictionary
@@ -32,9 +30,19 @@ func load_dialogue(file_path) -> Dictionary:
 func play_dialogue(dialog_dict):
 	$DialogueText.text = dialog_dict[_index_current].text
 	$NameText.text = dialog_dict[_index_current].name
+	if ($NameText.text == ""):
+		$NameBox.hide() 
+	else:
+		$NameBox.show()
+	$Background.texture = load("res://assets/"+dialog_dict[_index_current].background)
+	var size = $Background.texture.get_size()
+	var scale = Vector2((get_viewport_rect().size.x/size.x), (get_viewport_rect().size.y/size.y))
+	$Background.scale = scale
 
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
 		_index_current += 1
 		if _index_current == _len_dialogue_dict:
 			get_tree().change_scene("res://Transition.tscn")
+		else:
+			play_dialogue(dialogue_dict)
