@@ -3,11 +3,13 @@ extends Node2D
 signal hit
 
 export var local_speed = 400 # How fast the player will move (pixels/sec).
+var xspeed = 400
 
 var screen_size # Size of the game window.
 var total_life = 10
 var life = total_life
 var y_margin = 100
+var normal_xpos = 0.0
 
 func start(pos):
 	position = pos
@@ -45,21 +47,19 @@ func _process(delta):
 		$PlayerParticle/CollisionParticle.set_deferred("disabled", true)
 		$PlayerWave/CollisionWave.set_deferred("disabled", false)
 
+	
 	## Player movement
-	var velocity = Vector2.ZERO # The player's movement vector.
+	var direction = Vector2.ZERO # The player's movement vector.
 	if Input.is_action_pressed("move_right"):
-		velocity.x += 1
+		direction.x += 1
 	if Input.is_action_pressed("move_left"):
-		velocity.x -= 1
+		direction.x -= 1
 	if Input.is_action_pressed("move_down"):
-		velocity.y += 1
+		direction.y += 1
 	if Input.is_action_pressed("move_up"):
-		velocity.y -= 1
+		direction.y -= 1
 
-	if velocity.length() > 0:
-		velocity = velocity.normalized() * local_speed
-
-	position += velocity * delta
+	position += _compute_speed(direction.normalized()) * delta
 	position.x = clamp(position.x, 0, screen_size.x)
 	# hackish way to clamp below the screen
 	position.y = clamp(position.y, y_margin, screen_size.y - y_margin)
@@ -67,6 +67,23 @@ func _process(delta):
 	if life <= 0:
 		game_over()
 
+
+func _compute_speed(direction):
+	normal_xpos = position.x / screen_size.x
+	var xspeed = local_speed
+	var yspeed = local_speed
+	if direction.x > 0 and normal_xpos > 0.4:
+		xspeed *= max(
+			1.3*exp( -3*pow( (normal_xpos-0.4)/0.4, 3) ) - 0.3,
+			0.0
+		)
+	elif direction.x < 0 and normal_xpos < 0.2:
+		xspeed *= max(
+			1.3*exp( -3*pow( (0.2-normal_xpos)/0.1, 3) ) - 0.3,
+			0.0
+		)
+	
+	return Vector2(xspeed*direction.x, yspeed*direction.y)
 
 
 func _on_PlayerParticle_body_entered(body):

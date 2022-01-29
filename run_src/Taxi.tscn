@@ -5,9 +5,6 @@
 [ext_resource path="res://assets/pixel_art/taxi1.png" type="Texture" id=3]
 [ext_resource path="res://assets/pixel_art/taxi3.png" type="Texture" id=4]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 15.5, 14.5 )
-
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 3 ), ExtResource( 1 ), ExtResource( 4 ) ],
@@ -16,13 +13,17 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 28, 24 )
+
 [node name="RigidBody2D" type="RigidBody2D" groups=["taxis"]]
 gravity_scale = 0.0
 script = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["taxis"]]
-position = Vector2( -0.5, -0.5 )
-shape = SubResource( 1 )
-
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." groups=["taxis"]]
+scale = Vector2( 3, 3 )
 frames = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["taxis"]]
+position = Vector2( 4, 0 )
+shape = SubResource( 1 )
