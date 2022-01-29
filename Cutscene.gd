@@ -38,6 +38,12 @@ func play_dialogue(dialog_dict):
 	var size = $Background.texture.get_size()
 	var scale = Vector2((get_viewport_rect().size.x/size.x), (get_viewport_rect().size.y/size.y))
 	$Background.scale = scale
+	
+	$CharacterImage.texture = load("res://assets/"+dialog_dict[_index_current].expression)
+	if ($CharacterImage.texture):
+		size = $CharacterImage.texture.get_size()
+		scale = 1.4*get_viewport_rect().size.y/size.y
+		$CharacterImage.scale = Vector2(scale, scale)
 
 func _input(event):
 	if event.is_action_pressed("ui_accept"):

@@ -7,6 +7,7 @@ export var local_speed = 400 # How fast the player will move (pixels/sec).
 var screen_size # Size of the game window.
 var total_life = 10
 var life = total_life
+var y_margin = 100
 
 func start(pos):
 	position = pos
@@ -19,8 +20,11 @@ func start(pos):
 func change_state():
 	if $AnimatedSprite.animation == "particle":
 		$AnimatedSprite.animation = "wave"
+		y_margin = screen_size.y/2
 	elif $AnimatedSprite.animation == "wave":
 		$AnimatedSprite.animation = "particle"
+		position.y = screen_size.y/2
+		y_margin = 100
 	$AnimatedSprite.play()
 
 func _input(event):
@@ -56,8 +60,9 @@ func _process(delta):
 		velocity = velocity.normalized() * local_speed
 
 	position += velocity * delta
-#	position.x = clamp(position.x, 0, screen_size.x)
-#	position.y = clamp(position.y, 0, screen_size.y)
+	position.x = clamp(position.x, 0, screen_size.x)
+	# hackish way to clamp below the screen
+	position.y = clamp(position.y, y_margin, screen_size.y - y_margin)
 
 	if life <= 0:
 		game_over()
@@ -66,7 +71,12 @@ func _process(delta):
 
 func _on_PlayerParticle_body_entered(body):
 	emit_signal("hit")
-	life -= 1
+	# Repair only possible in particle mode
+	if "Repair" in body.name:
+		life += 3
+	else:
+		life -= 1
+	# Make object disappear
 	body.queue_free()
 
 
@@ -75,10 +85,13 @@ func _on_PlayerWave_body_entered(body):
 		emit_signal("hit")
 		life -= 1
 		body.queue_free()
-	elif body.is_in_group("asteroides"):
+	# No effect if repair or asteroid 
+	else:
 		pass
-
+	# Objects do not disappear in wave mode
 
 
 func game_over():
 	hide()
+
+
