@@ -15,10 +15,17 @@ func _ready():
 func _on_Player_hit():
 	print("hit")
 
-#func game_over():
+func game_over():
 #	pass
 #	#$ScoreTimer.stop()
 #	$ObstacleTimer.stop()
+	var cutscene_instance = preload("res://Cutscene.tscn").instance()
+	cutscene_instance._init_config("res://assets/text/scene1.json", "res://Transition.tscn")
+	get_parent().add_child(cutscene_instance)
+	
+	var run = get_parent().get_node("Run")
+	get_parent().remove_child(run)
+	run.call_deferred("free")
 
 func new_game():
 	score = 0
@@ -56,6 +63,8 @@ func _on_ObstacleTimer_timeout():
 
 func _process(delta):
 	$ProgressBar.value = (1.0*$Player.life/$Player.total_life)*100
+	#if ($ProgressBar.value == 0.0):
+	#	game_over()
 	
 
 #func _on_ScoreTimer_timeout():
