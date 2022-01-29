@@ -30,7 +30,7 @@ extents = Vector2( 9.83334, 6.5 )
 extents = Vector2( 15.6667, 119.333 )
 
 [node name="Player" type="Node2D"]
-position = Vector2( 255, 286 )
+position = Vector2( 255, 360 )
 scale = Vector2( 3, 3 )
 script = ExtResource( 4 )
 __meta__ = {
@@ -38,10 +38,8 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -0.999994, 28 )
 frames = SubResource( 1 )
 animation = "particle"
-frame = 2
 playing = true
 
 [node name="PlayerParticle" type="Area2D" parent="."]
@@ -51,13 +49,11 @@ __meta__ = {
 }
 
 [node name="CollisionParticle" type="CollisionShape2D" parent="PlayerParticle"]
-position = Vector2( -0.499985, 27.8333 )
 shape = SubResource( 2 )
 
 [node name="PlayerWave" type="Area2D" parent="."]
 
 [node name="CollisionWave" type="CollisionShape2D" parent="PlayerWave"]
-position = Vector2( -0.333328, 28.6667 )
 shape = SubResource( 3 )
 
 [connection signal="body_entered" from="PlayerParticle" to="." method="_on_PlayerParticle_body_entered"]

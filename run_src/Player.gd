@@ -7,7 +7,7 @@ export var local_speed = 400 # How fast the player will move (pixels/sec).
 var screen_size # Size of the game window.
 var total_life = 10
 var life = total_life
-var sprite_height = 28
+var y_margin = 100
 
 func start(pos):
 	position = pos
@@ -20,10 +20,11 @@ func start(pos):
 func change_state():
 	if $AnimatedSprite.animation == "particle":
 		$AnimatedSprite.animation = "wave"
-		sprite_height = screen_size.y
+		y_margin = screen_size.y/2
 	elif $AnimatedSprite.animation == "wave":
 		$AnimatedSprite.animation = "particle"
-		sprite_height = 28
+		position.y = screen_size.y/2
+		y_margin = 100
 	$AnimatedSprite.play()
 
 func _input(event):
@@ -61,7 +62,7 @@ func _process(delta):
 	position += velocity * delta
 	position.x = clamp(position.x, 0, screen_size.x)
 	# hackish way to clamp below the screen
-	position.y = clamp(position.y, 0, screen_size.y - sprite_height*4)
+	position.y = clamp(position.y, y_margin, screen_size.y - y_margin)
 
 	if life <= 0:
 		game_over()
