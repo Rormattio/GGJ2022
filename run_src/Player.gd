@@ -7,7 +7,7 @@ export var local_speed = 400 # How fast the player will move (pixels/sec).
 var screen_size # Size of the game window.
 var total_life = 10
 var life = total_life
-var y_margin = 100
+var y_margin = 50
 
 func start(pos):
 	position = pos
@@ -74,6 +74,7 @@ func _on_PlayerParticle_body_entered(body):
 	# Repair only possible in particle mode
 	if "Repair" in body.name:
 		life += 3
+		life = clamp(life, 0, total_life)
 	else:
 		life -= 1
 	# Make object disappear
