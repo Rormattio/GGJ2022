@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Run.gd" type="Script" id=1]
 [ext_resource path="res://run_src/Obstacle.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://run_src/Movement.tscn" type="PackedScene" id=4]
 [ext_resource path="res://run_src/Taxi.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/sounds/scene_loop.wav" type="AudioStream" id=6]
+[ext_resource path="res://run_src/CharactersPrompts.tscn" type="PackedScene" id=7]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -24,6 +25,7 @@ bg_color = Color( 0, 0, 0, 1 )
 script = ExtResource( 1 )
 obstacle_scene = ExtResource( 2 )
 taxi_scene = ExtResource( 5 )
+character_prompt = ExtResource( 7 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 153, 213 )

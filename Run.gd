@@ -2,6 +2,7 @@ extends Node
 
 export(PackedScene) var obstacle_scene
 export(PackedScene) var taxi_scene
+export(PackedScene) var character_prompt 
 
 var score
 
@@ -25,6 +26,9 @@ func new_game():
 	#$StartTimer.start()
 	$ObstacleTimer.start()
 	$TaxiTimer.start()
+	# Spawn ingame dialog
+	var character_dialog = character_prompt.instance()
+	add_child(character_dialog)
 
 func _on_ObstacleTimer_timeout():
 	 # Choose a random location on Path2D.
@@ -51,6 +55,7 @@ func _on_ObstacleTimer_timeout():
 
 func _process(delta):
 	$ProgressBar.value = (1.0*$Player.life/$Player.total_life)*100
+	
 
 #func _on_ScoreTimer_timeout():
 #	score += 1
