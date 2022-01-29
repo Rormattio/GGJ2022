@@ -14,28 +14,29 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 43, 26.5 )
+extents = Vector2( 8.66667, 6 )
 
-[node name="Node2D" type="Node2D"]
+[node name="Player" type="Node2D"]
 position = Vector2( 255, 274 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 5, 5 )
-frames = SubResource( 1 )
-animation = "base"
-
-[node name="Player" type="Area2D" parent="."]
-gravity = 0.0
+scale = Vector2( 3, 3 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( 3, -1.5 )
-shape = SubResource( 2 )
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
 
-[connection signal="hit" from="Player" to="Player" method="_on_Player_hit"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "base"
+
+[node name="PlayerArea" type="Area2D" parent="."]
+gravity = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea"]
+position = Vector2( 0.666672, -0.333336 )
+shape = SubResource( 2 )
