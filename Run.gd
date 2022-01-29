@@ -120,3 +120,18 @@ func _on_RepairTimer_timeout():
 	# Choose the velocity.
 	var velocity = Vector2(rand_range(150.0, 250.0), 0.0)
 	repair.linear_velocity = velocity.rotated(direction)
+
+
+func _on_Player_gyro():
+	# move all current taxis outward _real_ fast
+	# TODO: absolutely suboptimal,
+	# find a way to apply this method to all members of group
+	# taxis 
+	var children = get_children()
+	var taxis = Array()
+	for child in children:
+		if child is Taxi:
+			taxis.append(child)
+	for taxi in taxis:
+		taxi.linear_velocity.y -= $Player.position.y*4
+

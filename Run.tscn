@@ -68,6 +68,7 @@ __meta__ = {
 [node name="RepairTimer" type="Timer" parent="."]
 wait_time = 15.0
 
+[connection signal="gyro" from="Player" to="." method="_on_Player_gyro"]
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
 [connection signal="timeout" from="TaxiTimer" to="." method="_on_TaxiTimer_timeout"]
 [connection signal="timeout" from="ObstacleTimer" to="." method="_on_ObstacleTimer_timeout"]

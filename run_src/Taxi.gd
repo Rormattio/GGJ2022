@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-
+class_name Taxi
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"

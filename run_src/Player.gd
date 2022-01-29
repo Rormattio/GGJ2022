@@ -53,7 +53,6 @@ func _input(event):
 			if is_gyro_available:
 				light_flashing_light()
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#hide()

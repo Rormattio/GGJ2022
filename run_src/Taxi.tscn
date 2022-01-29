@@ -16,7 +16,7 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 28, 24 )
 
-[node name="RigidBody2D" type="RigidBody2D" groups=["taxis"]]
+[node name="Taxi" type="RigidBody2D" groups=["taxis"]]
 gravity_scale = 0.0
 script = ExtResource( 2 )
 
