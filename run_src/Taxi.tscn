@@ -1,26 +1,28 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://assets/pixel_art/vaisseau_gyro2.png" type="Texture" id=1]
+[ext_resource path="res://assets/pixel_art/taxi2.png" type="Texture" id=1]
 [ext_resource path="res://run_src/Taxi.gd" type="Script" id=2]
+[ext_resource path="res://assets/pixel_art/taxi1.png" type="Texture" id=3]
+[ext_resource path="res://assets/pixel_art/taxi3.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 41.5, 37.5 )
+extents = Vector2( 15.5, 14.5 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 1 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 1 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[node name="Node2D" type="RigidBody2D"]
+[node name="RigidBody2D" type="RigidBody2D" groups=["taxis"]]
+gravity_scale = 0.0
 script = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 31.5, 27.5 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["taxis"]]
+position = Vector2( -0.5, -0.5 )
 shape = SubResource( 1 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-rotation = 3.14159
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." groups=["taxis"]]
 frames = SubResource( 2 )

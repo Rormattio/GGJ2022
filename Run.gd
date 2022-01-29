@@ -57,7 +57,6 @@ func _process(delta):
 
 
 func _on_TaxiTimer_timeout():
-	print("here")
 	var taxi_spawn_location = get_node("ObstaclePath/ObstacleSpawnLocation");
 	taxi_spawn_location.offset = randi()
 
@@ -66,15 +65,15 @@ func _on_TaxiTimer_timeout():
 	add_child(taxi)
 
 	# Set the mob's direction perpendicular to the path direction.
-	var direction = taxi_spawn_location.rotation + PI/2 #+ PI / 2
+	var direction = PI #+ PI / 2
 
 	# Set the mob's position to a random location.
 	taxi.position = taxi_spawn_location.position
 
 	# Add some randomness to the direction.
-	#direction += rand_range(-PI / 4, PI / 4)
+#	direction += rand_range(-PI / 4, PI / 4)
 	taxi.rotation = direction
 
 	# Choose the velocity.
-	var velocity = Vector2(rand_range(150.0, 250.0), 0.0)
+	var velocity = Vector2(rand_range(speed, speed + 100), 50)
 	taxi.linear_velocity = velocity.rotated(direction)

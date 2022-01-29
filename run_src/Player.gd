@@ -67,11 +67,18 @@ func _process(delta):
 func _on_PlayerParticle_body_entered(body):
 	emit_signal("hit")
 	life -= 1
+	body.queue_free()
 
 
 func _on_PlayerWave_body_entered(body):
-	emit_signal("hit")
-	life -= 1
+	if body.is_in_group("taxis"):
+		emit_signal("hit")
+		life -= 1
+		body.queue_free()
+	elif body.is_in_group("asteroides"):
+		pass
+
+
 
 func game_over():
 	hide()
