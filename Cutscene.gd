@@ -17,7 +17,6 @@ func _ready():
 	play_dialogue(dialogue_dict)
 
 func _process(delta):
-	print(_index_current)
 	play_dialogue(dialogue_dict)
 
 func load_dialogue(file_path) -> Dictionary:
@@ -31,6 +30,7 @@ func load_dialogue(file_path) -> Dictionary:
 
 func play_dialogue(dialog_dict):
 	$DialogueBox.text = dialog_dict[_index_current].text
+	$NameBox.text = dialog_dict[_index_current].name
 
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
