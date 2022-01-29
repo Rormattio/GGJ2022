@@ -39,6 +39,10 @@ singletons=[ "res://addons/godot-git-plugin/git_api.gdnlib" ]
 
 window=false
 input=false
+interpo=false
+interpola=false
+interpolate=false
+interpolation=false
 
 [input]
 
