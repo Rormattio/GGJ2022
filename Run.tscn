@@ -1,20 +1,37 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Run.gd" type="Script" id=1]
 [ext_resource path="res://run_src/Obstacle.tscn" type="PackedScene" id=2]
+[ext_resource path="res://run_src/Player.tscn" type="PackedScene" id=3]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -1, -2, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 357, 2, 0, 0, 0, 0, 359, 449, 0, 0, 0, 0, -1, 446, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, -1, -2 )
+"points": PoolVector2Array( 0, 0, 0, 0, 1280, 720, 0, 0, 0, 0, 1280, 0, 0, 0, 0, 0, 1280, 720 )
 }
 
 [node name="Run" type="Node2D"]
 script = ExtResource( 1 )
-mob_scene = ExtResource( 2 )
+obstacle_scene = ExtResource( 2 )
 
-[node name="MobPath" type="Path2D" parent="."]
+[node name="ObstacleTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="StartTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="ScoreTimer" type="Timer" parent="."]
+
+[node name="StartPosition" type="Position2D" parent="."]
+
+[node name="ObstaclePath" type="Path2D" parent="."]
+position = Vector2( 972.8, 0 )
+scale = Vector2( 0.24, 1 )
 curve = SubResource( 1 )
 
-[node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
-position = Vector2( -1, -2 )
-rotation = 0.694353
+[node name="ObstacleSpawnLocation" type="PathFollow2D" parent="ObstaclePath"]
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+
+[connection signal="timeout" from="ObstacleTimer" to="." method="_on_ObstacleTimer_timeout"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
