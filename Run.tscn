@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Run.gd" type="Script" id=1]
 [ext_resource path="res://run_src/Obstacle.tscn" type="PackedScene" id=2]
@@ -10,6 +10,14 @@
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1280, 8, 0, 0, 0, 0, 1280, 720 )
 }
+
+[sub_resource type="Theme" id=2]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.235294, 0.682353, 0.0745098, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 0, 0, 1 )
 
 [node name="Run" type="Node"]
 script = ExtResource( 1 )
@@ -34,6 +42,18 @@ curve = SubResource( 1 )
 [node name="ObstacleSpawnLocation" type="PathFollow2D" parent="ObstaclePath"]
 position = Vector2( 1280, 8 )
 rotation = 1.5708
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+margin_right = 478.0
+margin_bottom = 39.0
+theme = SubResource( 2 )
+custom_colors/font_color = Color( 0.0980392, 0.239216, 0.858824, 1 )
+custom_styles/fg = SubResource( 3 )
+custom_styles/bg = SubResource( 4 )
+value = 100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
 [connection signal="timeout" from="ObstacleTimer" to="." method="_on_ObstacleTimer_timeout"]

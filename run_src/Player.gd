@@ -5,6 +5,8 @@ signal hit
 export var local_speed = 400 # How fast the player will move (pixels/sec).
 
 var screen_size # Size of the game window.
+var total_life = 10
+var life = total_life
 
 func start(pos):
 	position = pos
@@ -57,15 +59,19 @@ func _process(delta):
 #	position.x = clamp(position.x, 0, screen_size.x)
 #	position.y = clamp(position.y, 0, screen_size.y)
 
+	if life <= 0:
+		game_over()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 
 
 func _on_PlayerParticle_body_entered(body):
 	emit_signal("hit")
+	life -= 1
 
 
 func _on_PlayerWave_body_entered(body):
 	emit_signal("hit")
+	life -= 1
+
+func game_over():
+	hide()

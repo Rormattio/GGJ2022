@@ -46,7 +46,8 @@ func _on_ObstacleTimer_timeout():
 	var velocity = Vector2(rand_range(150.0, 250.0), 0.0)
 	obstacle.linear_velocity = velocity.rotated(direction)
 
-
+func _process(delta):
+	$ProgressBar.value = (1.0*$Player.life/$Player.total_life)*100
 
 #func _on_ScoreTimer_timeout():
 #	score += 1
