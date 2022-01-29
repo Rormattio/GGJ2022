@@ -15,14 +15,18 @@ func _ready():
 func _on_Player_hit():
 	print("hit")
 
+# contenu a mettre dans game_success, mais ici en attendant
 func game_over():
 #	pass
 #	#$ScoreTimer.stop()
 #	$ObstacleTimer.stop()
 	var cutscene_instance = preload("res://Cutscene.tscn").instance()
-	cutscene_instance._init_config("res://assets/text/scene1.json", "res://Transition.tscn")
+	if(Global.scene_index == 0):
+		cutscene_instance._init_config("res://assets/text/scene1.json")
+	elif(Global.scene_index == 1):
+		cutscene_instance._init_config("res://assets/text/scene2.json")
 	get_parent().add_child(cutscene_instance)
-	
+	Global.scene_index += 1
 	var run = get_parent().get_node("Run")
 	get_parent().remove_child(run)
 	run.call_deferred("free")
@@ -33,10 +37,11 @@ func new_game():
 	#$StartTimer.start()
 	$ObstacleTimer.start()
 	$TaxiTimer.start()
-	# Spawn ingame dialog
-	var character_dialog = character_prompt.instance()
-	add_child(character_dialog)
 	$RepairTimer.start()
+	# Spawn ingame dialog
+	if (Global.scene_index == 0):
+		var character_dialog = character_prompt.instance()
+		add_child(character_dialog)
 
 func _on_ObstacleTimer_timeout():
 	 # Choose a random location on Path2D.
@@ -63,8 +68,8 @@ func _on_ObstacleTimer_timeout():
 
 func _process(delta):
 	$ProgressBar.value = (1.0*$Player.life/$Player.total_life)*100
-	#if ($ProgressBar.value == 0.0):
-	#	game_over()
+	if ($ProgressBar.value == 0.0):
+		game_over()
 	
 
 #func _on_ScoreTimer_timeout():
