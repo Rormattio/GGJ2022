@@ -40,7 +40,8 @@ func play_dialogue(dialog_dict):
 		$NameBox.hide() 
 	else:
 		$NameBox.show()
-	
+	if $NameText.text == "Alarme" or $NameText.text == "Alarm":
+		$Alaaaaarm.play()
 	$Background.texture = load("res://assets/"+dialog_dict[_index_current].background)
 	var size = $Background.texture.get_size()
 	var scale = Vector2((get_viewport_rect().size.x/size.x), (get_viewport_rect().size.y/size.y))

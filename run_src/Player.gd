@@ -40,6 +40,7 @@ func change_state():
 func light_flashing_light():
 	emit_signal("gyro")
 	$AnimatedSprite.animation = "gyro"
+	$GyroEffect.play()
 	is_gyro_available = false
 	$GyroTimer.start()
 
