@@ -530,35 +530,35 @@
   "56": [{
       "type":"ast_s",
       "location":[1290,100],
-      "speed":[200,-200]
+      "speed":[300,-200]
   },
   {
       "type":"ast_s",
       "location":[1320,270],
-      "speed":[200,-200]
+      "speed":[300,-200]
   },
   {
       "type":"taxi",
       "location":[1290,620],
-      "speed":[200,200]
+      "speed":[300,200]
   },
   {
       "type":"taxi",
       "location":[1320,450],
-      "speed":[200,200]
+      "speed":[300,200]
   },
   {
       "type":"ast",
       "location":[1400,400],
-      "speed":[200,-160]
+      "speed":[300,-160]
   },
   {
       "type":"ast",
       "location":[1410,310],
-      "speed":[200,160]
+      "speed":[300,160]
   }
   ],
-  "58": [{
+  "60": [{
       "type":"rep",
       "location":[1290,60],
       "speed":[300,0]
