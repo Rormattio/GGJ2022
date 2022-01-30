@@ -70,6 +70,8 @@ wait_time = 15.0
 
 [node name="RunTimer" type="Timer" parent="."]
 wait_time = 60.0
+[node name="TimeElapsed" type="Timer" parent="."]
+autostart = true
 
 [connection signal="gyro" from="Player" to="." method="_on_Player_gyro"]
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
@@ -77,3 +79,4 @@ wait_time = 60.0
 [connection signal="timeout" from="ObstacleTimer" to="." method="_on_ObstacleTimer_timeout"]
 [connection signal="timeout" from="RepairTimer" to="." method="_on_RepairTimer_timeout"]
 [connection signal="timeout" from="RunTimer" to="." method="_on_RunTimer_timeout"]
+[connection signal="timeout" from="TimeElapsed" to="." method="_on_TimeElapsed_timeout"]
