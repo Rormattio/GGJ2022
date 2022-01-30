@@ -102,8 +102,13 @@ func spawn_at(type,x,y,speed_x,speed_y):
 		print("Unknown type" + type)
 		
 func _process(delta):
-	$ProgressBar.value = (1.0*$Player.life/$Player.total_life)*100
-	if ($ProgressBar.value == 0.0):
+	var life = $Player.life
+	for i in range($Player.total_life):
+		if (i<life):
+			$HPBar.get_child(i).texture = load("res://assets/pixel_art/health_full.png")
+		else:
+			$HPBar.get_child(i).texture = load("res://assets/pixel_art/health_empty.png")
+	if ($Player.life <= 0.0):
 		game_over()
 
 #func _on_ScoreTimer_timeout():
