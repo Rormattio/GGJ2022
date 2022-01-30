@@ -8,7 +8,7 @@ export var local_speed = 600 # How fast the player will move (pixels/sec).
 var screen_size # Size of the game window.
 var total_life = 10
 var life = total_life
-var y_margin = 100
+var y_margin = 52
 var normal_xpos = 0.0
 var is_gyro_available = true
 
@@ -27,7 +27,7 @@ func change_state():
 	elif $AnimatedSprite.animation == "wave":
 		$AnimatedSprite.animation = "particle"
 		position.y = screen_size.y/2
-		y_margin = 100
+		y_margin = 52
 	$AnimatedSprite.play()
 
 func light_flashing_light():
