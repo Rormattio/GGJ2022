@@ -22,7 +22,7 @@ func start(pos):
 	$AnimationSprite.play()
 
 func change_state():
-	if $AnimatedSprite.animation == "particle":
+	if $AnimatedSprite.animation == "particle" or $AnimatedSprite.animation == "gyro":
 		$AnimatedSprite.animation = "wave"
 		y_margin = screen_size.y/2
 	elif $AnimatedSprite.animation == "wave":
@@ -59,7 +59,7 @@ func _ready():
 	screen_size = get_viewport_rect().size
 	
 func _process(delta):
-	if $AnimatedSprite.animation == "particle":
+	if $AnimatedSprite.animation == "particle" or $AnimatedSprite.animation == "gyro":
 		$PlayerParticle/CollisionParticle.set_deferred("disabled", false)
 		$PlayerWave/CollisionWave.set_deferred("disabled", true)
 	elif $AnimatedSprite.animation == "wave":
