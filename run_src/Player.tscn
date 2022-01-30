@@ -98,9 +98,11 @@ stream = ExtResource( 13 )
 
 [node name="WaveMusicLoop" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 14 )
+volume_db = 11.361
 
 [node name="GyroEffect" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 15 )
+volume_db = 10.495
 
 [connection signal="body_entered" from="PlayerParticle" to="." method="_on_PlayerParticle_body_entered"]
 [connection signal="body_entered" from="PlayerWave" to="." method="_on_PlayerWave_body_entered"]
