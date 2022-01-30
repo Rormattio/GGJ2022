@@ -48,7 +48,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "gyro"
-frame = 1
+frame = 2
 playing = true
 
 [node name="PlayerParticle" type="Area2D" parent="."]
