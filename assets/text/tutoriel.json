@@ -8,5 +8,7 @@
   "007": {"name":"Bang", "expression":"pixel_art/bang_pixel_base.png", "text":"Passe en mode Onde ! C’est la touche ESPACE !"},
   "008": {"name":"Bang", "expression":"pixel_art/bang_pixel_base.png", "text":"En onde, tu traverses les astéroïdes."},
   "009": {"name":"Bang", "expression":"pixel_art/bang_pixel_surprised.png", "text":"Mais tu peux toujours subir des dégâts si tu rencontres un vaisseau à bouclier électromagnétique !"},
-  "010": {"name":"Bang", "expression":"pixel_art/bang_pixel_base.png", "text":"Oh, et tu ne peux pas activer ton gyrophare dans le mode onde !"}
+  "010": {"name":"Bang", "expression":"pixel_art/bang_pixel_base.png", "text":"Oh, et tu ne peux pas activer ton gyrophare dans le mode onde !"},
+  "011": {"name":"Bang", "expression":"pixel_art/bang_pixel_base.png", "text":"Hey regarde il y a une batterie qui arrive !"},
+  "012": {"name":"Bang", "expression":"pixel_art/bang_pixel_base.png", "text":"Tu peux la prendre pour récuperer de l'énergie."}
 }
