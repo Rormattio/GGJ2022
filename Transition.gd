@@ -10,6 +10,7 @@ extends Node2D
 func _ready():
 	# Plays the animation backward to fade in
 	$VideoPlayer.play()
+	$VZIOU.play()
 #	_anim_player.play("Fad")
 #	yield(_anim_player, "animation_finished")
 
