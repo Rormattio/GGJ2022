@@ -20,7 +20,7 @@
 animations = [ {
 "frames": [ ExtResource( 10 ), ExtResource( 12 ), ExtResource( 11 ) ],
 "loop": true,
-"name": "gyro",
+"name": "wave",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ) ],
