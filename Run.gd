@@ -38,6 +38,7 @@ func new_game():
 	$ObstacleTimer.start()
 	$TaxiTimer.start()
 	$RepairTimer.start()
+	$RunTimer.start()
 	# Spawn ingame dialog
 	if (Global.scene_index == 0):
 		var character_dialog = character_prompt.instance()
@@ -71,11 +72,23 @@ func _process(delta):
 	if ($ProgressBar.value == 0.0):
 		game_over()
 	
+	
 
 #func _on_ScoreTimer_timeout():
 #	score += 1
 
-
+func _on_RunTimer_timeout():
+	var cutscene_instance = preload("res://Cutscene.tscn").instance()
+	if(Global.scene_index == 0):
+		cutscene_instance._init_config("res://assets/text/scene1.json")
+	elif(Global.scene_index == 1):
+		cutscene_instance._init_config("res://assets/text/scene2.json")
+	get_parent().add_child(cutscene_instance)
+	Global.scene_index += 1
+	var run = get_parent().get_node("Run")
+	get_parent().remove_child(run)
+	run.call_deferred("free")
+	
 func _on_TaxiTimer_timeout():
 	var taxi_spawn_location = get_node("ObstaclePath/ObstacleSpawnLocation");
 	taxi_spawn_location.offset = randi()
