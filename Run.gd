@@ -126,8 +126,8 @@ func _on_RunTimer_timeout():
 		cutscene_instance._init_config(path+"/scene1.json")
 	elif(Global.scene_index == 1):
 		cutscene_instance._init_config(path+"/scene2.json")
-	get_parent().add_child(cutscene_instance)
 	Global.scene_index += 1
+	get_parent().add_child(cutscene_instance)
 	var run = get_parent().get_node("Run")
 	get_parent().remove_child(run)
 	run.call_deferred("free")
