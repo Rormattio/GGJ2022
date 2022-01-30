@@ -6,7 +6,7 @@ Theme: Duality
 
 # Big+Bang : A Spatial Medical Adventure
 
-![icon](https://github.com/Rormattio/GGJ2022/readme_img.png?raw=true)
+![icon](https://github.com/Rormattio/GGJ2022/blob/main/readme_img.png?raw=true)
 
 # How to play
 
