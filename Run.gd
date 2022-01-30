@@ -9,7 +9,8 @@ var score
 var spawn_dict
 var speed = 400
 var elapsed_time = 0
-
+var start_pos
+var screen_size
 
 func _ready():
 	randomize()
@@ -35,7 +36,9 @@ func game_over():
 
 func new_game():
 	score = 0
-	#$Player.start($StartPosition.position)
+	screen_size = $Player.get_viewport_rect().size
+	start_pos = Vector2(screen_size.x * 0.2, screen_size.y / 2)
+	$Player.start(start_pos)
 	#$StartTimer.start()
 	#$ObstacleTimer.start()
 	#$ObstacleSmallTimer.start()
@@ -178,7 +181,7 @@ func _on_Player_gyro():
 		if child is Taxi:
 			taxis.append(child)
 	for taxi in taxis:
-		taxi.linear_velocity.y -= $Player.position.y*4
+		taxi.linear_velocity.y -= $Player.position.y*2
 
 func _on_TimeElapsed_timeout():
 	elapsed_time += 1

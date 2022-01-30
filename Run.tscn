@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Run.gd" type="Script" id=1]
 [ext_resource path="res://run_src/Obstacle.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://run_src/CharactersPrompts.tscn" type="PackedScene" id=7]
 [ext_resource path="res://run_src/Taxi.tscn" type="PackedScene" id=8]
 [ext_resource path="res://run_src/Obstacle_small.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/sounds/scene_loop_wave.wav" type="AudioStream" id=10]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -39,6 +40,9 @@ position = Vector2( -85, -91.3333 )
 scale = Vector2( 0.333333, 0.333333 )
 stream = ExtResource( 6 )
 autoplay = true
+
+[node name="WaveMusicLoop" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource( 10 )
 
 [node name="ParallaxBackground" parent="." instance=ExtResource( 4 )]
 

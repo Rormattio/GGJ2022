@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Transition.gd" type="Script" id=1]
-[ext_resource path="res://assets/cutscenes/Transition_hyperspace_final.webm" type="VideoStream" id=2]
+[ext_resource path="res://assets/cutscenes/Transition_hyperspace_background_compressed.webm" type="VideoStream" id=2]
+[ext_resource path="res://assets/sounds/warp_transition.wav" type="AudioStream" id=3]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -13,5 +14,9 @@ stream = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="VZIOU" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 600, 400 )
+stream = ExtResource( 3 )
 
 [connection signal="finished" from="VideoPlayer" to="." method="_on_VideoPlayer_finished"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/pixel_art/vaisseau_base1.png" type="Texture" id=1]
 [ext_resource path="res://assets/pixel_art/vaisseau_base2.png" type="Texture" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://assets/pixel_art/vaisseau_gyro1.png" type="Texture" id=10]
 [ext_resource path="res://assets/pixel_art/vaisseau_gyro3.png" type="Texture" id=11]
 [ext_resource path="res://assets/pixel_art/vaisseau_gyro2.png" type="Texture" id=12]
+[ext_resource path="res://assets/sounds/scene_loop.wav" type="AudioStream" id=13]
+[ext_resource path="res://assets/sounds/scene_loop_wave.wav" type="AudioStream" id=14]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -48,6 +50,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "gyro"
+frame = 2
 playing = true
 
 [node name="PlayerParticle" type="Area2D" parent="."]
@@ -87,8 +90,19 @@ one_shot = true
 wait_time = 4.0
 one_shot = true
 
+[node name="MusicLoop" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( -85, -91.3333 )
+scale = Vector2( 0.333333, 0.333333 )
+stream = ExtResource( 13 )
+autoplay = true
+
+[node name="WaveMusicLoop" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 14 )
+
 [connection signal="body_entered" from="PlayerParticle" to="." method="_on_PlayerParticle_body_entered"]
 [connection signal="body_entered" from="PlayerWave" to="." method="_on_PlayerWave_body_entered"]
 [connection signal="body_entered" from="PlayerGyro" to="." method="_on_PlayerParticle_body_entered"]
 [connection signal="timeout" from="GyroTimer" to="." method="_on_GyroTimer_timeout"]
 [connection signal="timeout" from="GyroTimer/GyroCooldown" to="." method="_on_GyroCooldown_timeout"]
+[connection signal="finished" from="MusicLoop" to="." method="_on_MusicLoop_finished"]
+[connection signal="finished" from="WaveMusicLoop" to="." method="_on_WaveMusicLoop_finished"]
