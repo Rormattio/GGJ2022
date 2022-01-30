@@ -6,7 +6,7 @@ Theme: Duality
 
 # Big+Bang : A Spatial Medical Adventure
 
-![icon](https://github.com/Rormattio/GGJ2022/blob/main/readme_img.png?raw=true)]
+![icon](https://github.com/Rormattio/GGJ2022/readme_img.png?raw=true)
 
 # How to play
 
@@ -18,7 +18,7 @@ the executable from the root of your file.
 * Aurore: Art, programming, voice acting, cooking
 * Benoit: Programming
 * Johannes: Programming
-* Julien: Sound design
+* Julien: Sound design, programming
 * Leopold: Programming
-* Nolwenn: Visual effects, dialogs
-* Pauline: Pixel art, dialogs
+* Nolwenn: Visual effects, writing
+* Pauline: Pixel art, writing
