@@ -59,12 +59,18 @@ func _ready():
 	screen_size = get_viewport_rect().size
 	
 func _process(delta):
-	if $AnimatedSprite.animation == "particle" or $AnimatedSprite.animation == "gyro":
+	if $AnimatedSprite.animation == "particle":
 		$PlayerParticle/CollisionParticle.set_deferred("disabled", false)
 		$PlayerWave/CollisionWave.set_deferred("disabled", true)
-	elif $AnimatedSprite.animation == "wave":
+		$PlayerGyro/CollisionGyro.set_deferred("disabled", true)
+	elif $AnimatedSprite.animation == "gyro":
+		$PlayerGyro/CollisionGyro.set_deferred("disabled", false)
 		$PlayerParticle/CollisionParticle.set_deferred("disabled", true)
+		$PlayerWave/CollisionWave.set_deferred("disabled", true)
+	elif $AnimatedSprite.animation == "wave":
 		$PlayerWave/CollisionWave.set_deferred("disabled", false)
+		$PlayerParticle/CollisionParticle.set_deferred("disabled", true)
+		$PlayerGyro/CollisionGyro.set_deferred("disabled", true)
 
 	
 	## Player movement
@@ -116,7 +122,16 @@ func _on_PlayerParticle_body_entered(body):
 	# Make object disappear
 	body.queue_free()
 
-
+func _on_PlayerGyro_body_entered(body):
+	if "Repair" in body.name:
+		life += 3
+		life = clamp(life, 0, total_life)
+	elif "Obstacle" in body.name:
+		emit_signal("hit")
+		life -= 3
+	# Make object disappear
+	body.queue_free()
+	
 func _on_PlayerWave_body_entered(body):
 	if body.is_in_group("taxis"):
 		emit_signal("hit")
