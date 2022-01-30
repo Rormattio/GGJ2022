@@ -14,8 +14,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	t += 1
-	if t%100 == 0:
-		linear_velocity.y = - linear_velocity.y
+	pass
+#	t += 1
+#	if t%100 == 0:
+#		linear_velocity.y = - linear_velocity.y
 
 

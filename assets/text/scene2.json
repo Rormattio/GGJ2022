@@ -8,5 +8,12 @@
   "014": {"name":"Big", "expression":"drawing/big_flushed.png", "background":"drawing/background_hospital.png","text":"..."},
   "015": {"name":"Alarme", "expression":"", "background":"drawing/background_hospital.png","text":"WIOUWIOUWIOU"},
   "016": {"name":"Big", "expression":"drawing/big.png", "background":"drawing/background_hospital.png","text":"!"},
-  "017": {"name":"Bang", "expression":"drawing/bang_surprised.png", "background":"drawing/background_hospital.png","text":"Tu as raison Big, le devoir nous appelle. C’est reparti !"}
+  "017": {"name":"Bang", "expression":"drawing/bang_surprised.png", "background":"drawing/background_hospital.png","text":"Tu as raison Big, le devoir nous appelle. C’est reparti !"},
+  "018": {"name":"Bang", "expression":"drawing/bang.png", "background":"drawing/background.png","text":"Quelle aventure quand même !"},
+  "019": {"name":"Bang", "expression":"drawing/bang.png", "background":"drawing/background.png","text":"Big, je dois te dire quelque chose..."},
+  "020": {"name":"Bang", "expression":"drawing/bang_happy.png", "background":"drawing/background.png","text":"Tu es le meilleur pilote et ami dont j'aurais pu rêver..."},
+  "021": {"name":"Bang", "expression":"drawing/bang_happy.png", "background":"drawing/background.png","text":"C'est un honneur de sauver des gens à tes côtés !"},
+  "022": {"name":"Big", "expression":"drawing/big.png", "background":"drawing/background.png","text":":)"},
+  "023": {"name":"Bang", "expression":"drawing/bang_happy.png", "background":"drawing/background.png","text":"Ohlala, je suis toute émue... Mais pas le temps de niaiser !"},
+  "024": {"name":"Bang", "expression":"drawing/bang_happy.png", "background":"drawing/background.png","text":"Quelqu'un quelque part à besoin de nous ! Alors c'est tipar !"}
 }
