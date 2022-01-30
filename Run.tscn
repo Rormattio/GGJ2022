@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Run.gd" type="Script" id=1]
 [ext_resource path="res://run_src/Obstacle.tscn" type="PackedScene" id=2]
@@ -10,19 +10,12 @@
 [ext_resource path="res://run_src/Taxi.tscn" type="PackedScene" id=8]
 [ext_resource path="res://run_src/Obstacle_small.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/sounds/scene_loop_wave.wav" type="AudioStream" id=10]
+[ext_resource path="res://assets/pixel_art/health_full.png" type="Texture" id=11]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1280, 8, 0, 0, 0, 0, 1280, 720 )
 }
-
-[sub_resource type="Theme" id=2]
-
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.235294, 0.682353, 0.0745098, 1 )
-
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0, 0, 0, 1 )
 
 [node name="Run" type="Node"]
 script = ExtResource( 1 )
@@ -62,18 +55,6 @@ curve = SubResource( 1 )
 position = Vector2( 1280, 8 )
 rotation = 1.5708
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
-margin_right = 478.0
-margin_bottom = 39.0
-theme = SubResource( 2 )
-custom_colors/font_color = Color( 0.0980392, 0.239216, 0.858824, 1 )
-custom_styles/fg = SubResource( 3 )
-custom_styles/bg = SubResource( 4 )
-value = 100.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="RepairTimer" type="Timer" parent="."]
 wait_time = 15.0
 
@@ -82,6 +63,77 @@ wait_time = 60.0
 
 [node name="TimeElapsed" type="Timer" parent="."]
 autostart = true
+
+[node name="HPBar" type="HBoxContainer" parent="."]
+margin_left = 5.0
+margin_top = 4.0
+margin_right = 484.0
+margin_bottom = 44.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HP1" type="TextureRect" parent="HPBar"]
+margin_right = 31.0
+margin_bottom = 40.0
+texture = ExtResource( 11 )
+
+[node name="HP2" type="TextureRect" parent="HPBar"]
+margin_left = 35.0
+margin_right = 66.0
+margin_bottom = 40.0
+texture = ExtResource( 11 )
+
+[node name="HP3" type="TextureRect" parent="HPBar"]
+margin_left = 70.0
+margin_right = 101.0
+margin_bottom = 40.0
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HP4" type="TextureRect" parent="HPBar"]
+margin_left = 105.0
+margin_right = 136.0
+margin_bottom = 40.0
+texture = ExtResource( 11 )
+
+[node name="HP5" type="TextureRect" parent="HPBar"]
+margin_left = 140.0
+margin_right = 171.0
+margin_bottom = 40.0
+texture = ExtResource( 11 )
+
+[node name="HP6" type="TextureRect" parent="HPBar"]
+margin_left = 175.0
+margin_right = 206.0
+margin_bottom = 40.0
+texture = ExtResource( 11 )
+
+[node name="HP7" type="TextureRect" parent="HPBar"]
+margin_left = 210.0
+margin_right = 241.0
+margin_bottom = 40.0
+texture = ExtResource( 11 )
+
+[node name="HP8" type="TextureRect" parent="HPBar"]
+margin_left = 245.0
+margin_right = 276.0
+margin_bottom = 40.0
+texture = ExtResource( 11 )
+
+[node name="HP9" type="TextureRect" parent="HPBar"]
+margin_left = 280.0
+margin_right = 311.0
+margin_bottom = 40.0
+texture = ExtResource( 11 )
+
+[node name="HP10" type="TextureRect" parent="HPBar"]
+margin_left = 315.0
+margin_right = 346.0
+margin_bottom = 40.0
+texture = ExtResource( 11 )
 
 [connection signal="gyro" from="Player" to="." method="_on_Player_gyro"]
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
