@@ -23,7 +23,10 @@ func game_over():
 #	#$ScoreTimer.stop()
 #	$ObstacleTimer.stop()
 	var cutscene_instance = preload("res://Cutscene.tscn").instance()
-	cutscene_instance._init_config("res://assets/text/game_over.json")
+	if Global.language == "fr":
+		cutscene_instance._init_config("res://assets/text/game_over.json")
+	else:
+		cutscene_instance._init_config("res://assets/text_eng/game_over.json")
 	get_parent().add_child(cutscene_instance)
 	var run = get_parent().get_node("Run")
 	get_parent().remove_child(run)
@@ -89,10 +92,13 @@ func _process(delta):
 
 func _on_RunTimer_timeout():
 	var cutscene_instance = preload("res://Cutscene.tscn").instance()
+	var path = "res://assets/text"
+	if Global.language == "eng":
+		path += "_eng"
 	if(Global.scene_index == 0):
-		cutscene_instance._init_config("res://assets/text/scene1.json")
+		cutscene_instance._init_config(path+"/scene1.json")
 	elif(Global.scene_index == 1):
-		cutscene_instance._init_config("res://assets/text/scene2.json")
+		cutscene_instance._init_config(path+"/scene2.json")
 	get_parent().add_child(cutscene_instance)
 	Global.scene_index += 1
 	var run = get_parent().get_node("Run")
