@@ -1,28 +1,69 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://assets/pixel_art/fondtest2.png" type="Texture" id=1]
-[ext_resource path="res://assets/pixel_art/fondtest1.png" type="Texture" id=2]
+[ext_resource path="res://assets/pixel_art/background_2.png" type="Texture" id=1]
 [ext_resource path="res://run_src/Movement.gd" type="Script" id=3]
+[ext_resource path="res://assets/pixel_art/background_1.png" type="Texture" id=4]
+[ext_resource path="res://assets/pixel_art/background_3.png" type="Texture" id=5]
+[ext_resource path="res://assets/pixel_art/background_5.png" type="Texture" id=6]
+[ext_resource path="res://assets/pixel_art/background_6.png" type="Texture" id=7]
+[ext_resource path="res://assets/pixel_art/background_4.png" type="Texture" id=8]
 
 [node name="Movement" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.5, 1 )
-motion_mirroring = Vector2( 1280, 720 )
+[node name="ParallaxLayer1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.25, 1 )
+motion_mirroring = Vector2( 3840, 0 )
 
-[node name="Fondtest1" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2( 640, 360 )
+[node name="Background1" type="Sprite" parent="ParallaxBackground/ParallaxLayer1"]
 scale = Vector2( 4, 4 )
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
+centered = false
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.75, 1 )
-motion_mirroring = Vector2( 1600, 900 )
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.25, 1 )
+motion_mirroring = Vector2( 3840, 0 )
 
-[node name="Fondtest2" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 788, 333 )
-scale = Vector2( 5, 5 )
+[node name="Background2" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+scale = Vector2( 4, 4 )
 texture = ExtResource( 1 )
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.35, 1 )
+motion_mirroring = Vector2( 3840, 0 )
+
+[node name="Background3" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.4, 1 )
+motion_mirroring = Vector2( 3840, 0 )
+
+[node name="Background4" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 8 )
+centered = false
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 3840, 0 )
+
+[node name="Background5" type="Sprite" parent="ParallaxBackground/ParallaxLayer5"]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.75, 1 )
+motion_mirroring = Vector2( 3840, 0 )
+
+[node name="Background6" type="Sprite" parent="ParallaxBackground/ParallaxLayer6"]
+modulate = Color( 0.729412, 0.729412, 0.729412, 1 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 7 )
+centered = false
