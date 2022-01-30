@@ -3,8 +3,7 @@ extends Node2D
 signal hit
 signal gyro
 
-export var local_speed = 400 # How fast the player will move (pixels/sec).
-var xspeed = 400
+export var local_speed = 600 # How fast the player will move (pixels/sec).
 
 var screen_size # Size of the game window.
 var total_life = 10
