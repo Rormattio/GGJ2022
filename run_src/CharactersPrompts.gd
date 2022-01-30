@@ -12,7 +12,10 @@ var _len_dialogue_dict
 
 func _ready():
 	$DialogLineTimer.start()
-	dialogue_dict = load_dialogue("res://assets/text/tutoriel.json").values()
+	if Global.language == "fr":
+		dialogue_dict = load_dialogue("res://assets/text/tutoriel.json").values()
+	else:
+		dialogue_dict = load_dialogue("res://assets/text_eng/tutoriel.json").values()	
 	_len_dialogue_dict = len(dialogue_dict)
 	play_dialogue(dialogue_dict)
 
