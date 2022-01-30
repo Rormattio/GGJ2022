@@ -1,6 +1,7 @@
 extends Node
 
 export(PackedScene) var obstacle_scene
+export(PackedScene) var obstacle_small_scene
 export(PackedScene) var taxi_scene
 export(PackedScene) var character_prompt 
 export(PackedScene) var repair_scene
@@ -36,9 +37,10 @@ func new_game():
 	score = 0
 	#$Player.start($StartPosition.position)
 	#$StartTimer.start()
-	$ObstacleTimer.start()
-	$TaxiTimer.start()
-	$RepairTimer.start()
+	#$ObstacleTimer.start()
+	#$ObstacleSmallTimer.start()
+	#$TaxiTimer.start()
+	#$RepairTimer.start()
 	$RunTimer.start()
 	# Spawn ingame dialog
 	spawn_dict = load_spawn_dict("res://run_src/spawn_lvl_1.json")
@@ -75,12 +77,26 @@ func spawn_at(type,x,y,speed_x,speed_y):
 		taxi.position = pos
 		var velocity = Vector2(speed_x, speed_y)
 		taxi.linear_velocity = velocity.rotated(direction)
-	elif type == "asteroid":
+	elif type == "ast":
 		var obstacle = obstacle_scene.instance()
 		add_child(obstacle)
 		obstacle.position = pos
 		var velocity = Vector2(speed_x, speed_y)
 		obstacle.linear_velocity = velocity.rotated(direction)
+	elif type == "ast_s":
+		var obstacle = obstacle_small_scene.instance()
+		add_child(obstacle)
+		obstacle.position = pos
+		var velocity = Vector2(speed_x, speed_y)
+		obstacle.linear_velocity = velocity.rotated(direction)
+	elif type == "rep":
+		var obstacle = repair_scene.instance()
+		add_child(obstacle)
+		obstacle.position = pos
+		var velocity = Vector2(speed_x, speed_y)
+		obstacle.linear_velocity = velocity.rotated(direction)
+	else:
+		print("Unknown type" + type)
 		
 func _process(delta):
 	$ProgressBar.value = (1.0*$Player.life/$Player.total_life)*100
@@ -167,3 +183,4 @@ func _on_Player_gyro():
 func _on_TimeElapsed_timeout():
 	elapsed_time += 1
 	spawn_according_to(spawn_dict)
+

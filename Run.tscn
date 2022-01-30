@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Run.gd" type="Script" id=1]
 [ext_resource path="res://run_src/Obstacle.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/sounds/scene_loop.wav" type="AudioStream" id=6]
 [ext_resource path="res://run_src/CharactersPrompts.tscn" type="PackedScene" id=7]
 [ext_resource path="res://run_src/Taxi.tscn" type="PackedScene" id=8]
+[ext_resource path="res://run_src/Obstacle_small.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -25,6 +26,7 @@ bg_color = Color( 0, 0, 0, 1 )
 [node name="Run" type="Node"]
 script = ExtResource( 1 )
 obstacle_scene = ExtResource( 2 )
+obstacle_small_scene = ExtResource( 9 )
 taxi_scene = ExtResource( 8 )
 character_prompt = ExtResource( 7 )
 repair_scene = ExtResource( 5 )
@@ -44,6 +46,9 @@ autoplay = true
 wait_time = 3.0
 
 [node name="ObstacleTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="ObstacleSmallTimer" type="Timer" parent="."]
 wait_time = 0.5
 
 [node name="ObstaclePath" type="Path2D" parent="."]
@@ -70,6 +75,7 @@ wait_time = 15.0
 
 [node name="RunTimer" type="Timer" parent="."]
 wait_time = 60.0
+
 [node name="TimeElapsed" type="Timer" parent="."]
 autostart = true
 
@@ -77,6 +83,7 @@ autostart = true
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
 [connection signal="timeout" from="TaxiTimer" to="." method="_on_TaxiTimer_timeout"]
 [connection signal="timeout" from="ObstacleTimer" to="." method="_on_ObstacleTimer_timeout"]
+[connection signal="timeout" from="ObstacleSmallTimer" to="." method="_on_ObstacleSmallTimer_timeout"]
 [connection signal="timeout" from="RepairTimer" to="." method="_on_RepairTimer_timeout"]
 [connection signal="timeout" from="RunTimer" to="." method="_on_RunTimer_timeout"]
 [connection signal="timeout" from="TimeElapsed" to="." method="_on_TimeElapsed_timeout"]
