@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/pixel_art/asteroid.png" type="Texture" id=1]
-[ext_resource path="res://run_src/Obstacle.gd" type="Script" id=3]
+[ext_resource path="res://run_src/Obstacle_small.gd" type="Script" id=2]
 [ext_resource path="res://run_src/VisibilityNotifier2D.gd" type="Script" id=4]
 
 [sub_resource type="SpriteFrames" id=1]
@@ -18,20 +18,17 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 68.0
+radius = 38.0
 height = 0.0
 
-[node name="Obstacle" type="RigidBody2D" groups=["asteroides"]]
-scale = Vector2( 2, 2 )
-collision_layer = 3
-collision_mask = 3
-mass = 50.0
+[node name="ObstacleSmall" type="RigidBody2D" groups=["asteroides"]]
+mass = 10.0
 gravity_scale = 0.0
-script = ExtResource( 3 )
+script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." groups=["asteroides"]]
 rotation = 3.14159
-scale = Vector2( 3, 3 )
+scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 1 )
 animation = "asteroid_2"
 __meta__ = {
