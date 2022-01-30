@@ -18,5 +18,6 @@ __meta__ = {
 [node name="VZIOU" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 600, 400 )
 stream = ExtResource( 3 )
+volume_db = -2.761
 
 [connection signal="finished" from="VideoPlayer" to="." method="_on_VideoPlayer_finished"]
