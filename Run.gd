@@ -5,8 +5,10 @@ export(PackedScene) var taxi_scene
 export(PackedScene) var character_prompt 
 export(PackedScene) var repair_scene
 var score
-
+var spawn_dict
 var speed = 400
+var elapsed_time = 0
+
 
 func _ready():
 	randomize()
@@ -21,12 +23,8 @@ func game_over():
 #	#$ScoreTimer.stop()
 #	$ObstacleTimer.stop()
 	var cutscene_instance = preload("res://Cutscene.tscn").instance()
-	if(Global.scene_index == 0):
-		cutscene_instance._init_config("res://assets/text/scene1.json")
-	elif(Global.scene_index == 1):
-		cutscene_instance._init_config("res://assets/text/scene2.json")
+	cutscene_instance._init_config("res://assets/text/game_over.json")
 	get_parent().add_child(cutscene_instance)
-	Global.scene_index += 1
 	var run = get_parent().get_node("Run")
 	get_parent().remove_child(run)
 	run.call_deferred("free")
@@ -40,39 +38,51 @@ func new_game():
 	$RepairTimer.start()
 	$RunTimer.start()
 	# Spawn ingame dialog
+	spawn_dict = load_spawn_dict("res://run_src/spawn_lvl_1.json")
 	if (Global.scene_index == 0):
 		var character_dialog = character_prompt.instance()
 		add_child(character_dialog)
 
-func _on_ObstacleTimer_timeout():
-	 # Choose a random location on Path2D.
-	var obstacle_spawn_location = get_node("ObstaclePath/ObstacleSpawnLocation");
-	obstacle_spawn_location.offset = randi()
+func load_spawn_dict(file_path) -> Dictionary:
+	# Load dictionnary describing ennemy spawning
+	var file = File.new()
+	assert(file.file_exists(file_path))
+	file.open(file_path, file.READ)
+	var spawn_dict = parse_json(file.get_as_text())
+	assert(spawn_dict.size() > 0)
+	return spawn_dict
 
-	# Create a Obstacle instance and add it to the scene.
-	var obstacle = obstacle_scene.instance()
-	add_child(obstacle)
+func spawn_according_to(dict):
+	var descriptors = dict.get(str(elapsed_time))
+	if descriptors != null:
+		for descriptor in descriptors:
+			var x = descriptor.location[0]
+			var y = descriptor.location[1]
+			var type = descriptor.type
+			var speed_x = descriptor.speed[0]
+			var speed_y = descriptor.speed[1]
+			spawn_at(type,x,y,speed_x,speed_y)
 
-	# Set the mob's direction perpendicular to the path direction.
-	var direction = obstacle_spawn_location.rotation + PI/2 #+ PI / 2
-
-	# Set the mob's position to a random location.
-	obstacle.position = obstacle_spawn_location.position
-
-	# Add some randomness to the direction.
-	direction += rand_range(-PI / 4, PI / 4)
-	obstacle.rotation = direction
-
-	# Choose the velocity.
-	var velocity = Vector2(rand_range(0.0, 1000.0), 0.0)
-	obstacle.linear_velocity = velocity.rotated(direction)
-
+func spawn_at(type,x,y,speed_x,speed_y):
+	var pos = Vector2(x,y)
+	var direction = PI
+	if type == "taxi":
+		var taxi = taxi_scene.instance()
+		add_child(taxi)
+		taxi.position = pos
+		var velocity = Vector2(speed_x, speed_y)
+		taxi.linear_velocity = velocity.rotated(direction)
+	elif type == "asteroid":
+		var obstacle = obstacle_scene.instance()
+		add_child(obstacle)
+		obstacle.position = pos
+		var velocity = Vector2(speed_x, speed_y)
+		obstacle.linear_velocity = velocity.rotated(direction)
+		
 func _process(delta):
 	$ProgressBar.value = (1.0*$Player.life/$Player.total_life)*100
 	if ($ProgressBar.value == 0.0):
 		game_over()
-	
-	
 
 #func _on_ScoreTimer_timeout():
 #	score += 1
@@ -148,3 +158,6 @@ func _on_Player_gyro():
 	for taxi in taxis:
 		taxi.linear_velocity.y -= $Player.position.y*4
 
+func _on_TimeElapsed_timeout():
+	elapsed_time += 1
+	spawn_according_to(spawn_dict)
