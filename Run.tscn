@@ -32,7 +32,7 @@ character_prompt = ExtResource( 7 )
 repair_scene = ExtResource( 5 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 153, 213 )
+position = Vector2( 250, 360 )
 
 [node name="MusicLoop" type="AudioStreamPlayer2D" parent="Player"]
 position = Vector2( -85, -91.3333 )
