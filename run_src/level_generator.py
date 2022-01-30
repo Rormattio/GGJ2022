@@ -17,7 +17,7 @@ def make_line(nb_taxis, nb_ast, init_pos, speed, width, slope):
         line.append( obstacle("taxi", current_pos + taxi_offset, speed) )
         current_pos += np.array( np.array([1,slope]) * taxi_xdist, dtype='int')
     current_pos = np.array( init_pos, dtype='int' )
-    for _ in range(6):
+    for _ in range(nb_ast):
         for i in range(3):
             offset = np.array([0, width/2 + (i+1)*ast_ymargin], dtype='int')
             line.append( obstacle("ast", current_pos - offset, speed) )
@@ -28,8 +28,7 @@ def make_line(nb_taxis, nb_ast, init_pos, speed, width, slope):
 
 t = '3'
 obs = {
-        '3': make_line(10,6,[1400,500],[500,30],200,0.3) \
-        + make_line(10,6,[2200,500],[500,30],200,-0.3)
+        '1': make_line(15,10,[1400,300],[600,30],200,0.4)
         }
 
 print(json.dumps(obs))
