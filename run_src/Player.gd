@@ -11,6 +11,7 @@ var life = total_life
 var y_margin = 52
 var normal_xpos = 0.0
 var is_gyro_available = true
+var playback_position = 0
 
 func start(pos):
 	position = pos
@@ -23,9 +24,15 @@ func start(pos):
 func change_state():
 	if $AnimatedSprite.animation == "particle" or $AnimatedSprite.animation == "gyro":
 		$AnimatedSprite.animation = "wave"
+		playback_position = $MusicLoop.get_playback_position()
+		$MusicLoop.stop()
+		$WaveMusicLoop.play(playback_position)
 		y_margin = screen_size.y/2
 	elif $AnimatedSprite.animation == "wave":
 		$AnimatedSprite.animation = "particle"
+		playback_position = $WaveMusicLoop.get_playback_position()
+		$WaveMusicLoop.stop()
+		$MusicLoop.play(playback_position)
 		position.y = screen_size.y/2
 		y_margin = 52
 	$AnimatedSprite.play()
@@ -145,4 +152,10 @@ func _on_PlayerWave_body_entered(body):
 func game_over():
 	hide()
 
+func _on_MusicLoop_finished():
+	playback_position = 0
+	$MusicLoop.play(playback_position)
 
+func _on_WaveMusicLoop_finished():
+	playback_position = 0
+	$WaveMusicLoop.play(playback_position)
