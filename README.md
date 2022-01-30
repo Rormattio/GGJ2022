@@ -10,7 +10,7 @@ Theme: Duality
 
 # How to play
 
-Go to the github [release page](https://github.com/Rormattio/GGJ2022/releases/tag/v1.0.0).
+Go to the github [release page](https://github.com/Rormattio/GGJ2022/releases).
 Download and extract the zip file corresponding to your platform. Then launch
 the executable from the root of your file.
 
