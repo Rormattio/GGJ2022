@@ -1,5 +1,8 @@
 extends Node2D
 
+func _input(event):
+	if event.is_action_pressed("ui_accept"):
+		_on_Button_pressed()
 
 func _on_Button_pressed():
 	var cutscene_instance = preload("res://Cutscene.tscn").instance()
