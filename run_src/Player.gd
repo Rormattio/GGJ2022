@@ -63,6 +63,8 @@ func _input(event):
 func _ready():
 	#hide()
 	screen_size = get_viewport_rect().size
+	$MusicLoop.play()
+	
 	
 func _process(delta):
 	if $AnimatedSprite.animation == "particle":

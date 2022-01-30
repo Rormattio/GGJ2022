@@ -17,14 +17,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 10 ), ExtResource( 12 ), ExtResource( 11 ) ],
-"loop": true,
-"name": "gyro",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "particle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 12 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "gyro",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 5 ) ],
@@ -93,10 +93,7 @@ wait_time = 4.0
 one_shot = true
 
 [node name="MusicLoop" type="AudioStreamPlayer2D" parent="."]
-position = Vector2( -85, -91.3333 )
-scale = Vector2( 0.333333, 0.333333 )
 stream = ExtResource( 13 )
-autoplay = true
 
 [node name="WaveMusicLoop" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 14 )

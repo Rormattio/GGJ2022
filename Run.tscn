@@ -1,15 +1,13 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Run.gd" type="Script" id=1]
 [ext_resource path="res://run_src/Obstacle.tscn" type="PackedScene" id=2]
 [ext_resource path="res://run_src/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://run_src/Movement.tscn" type="PackedScene" id=4]
 [ext_resource path="res://run_src/Repair.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/sounds/scene_loop.wav" type="AudioStream" id=6]
 [ext_resource path="res://run_src/CharactersPrompts.tscn" type="PackedScene" id=7]
 [ext_resource path="res://run_src/Taxi.tscn" type="PackedScene" id=8]
 [ext_resource path="res://run_src/Obstacle_small.tscn" type="PackedScene" id=9]
-[ext_resource path="res://assets/sounds/scene_loop_wave.wav" type="AudioStream" id=10]
 [ext_resource path="res://assets/pixel_art/health_full.png" type="Texture" id=11]
 
 [sub_resource type="Curve2D" id=1]
@@ -27,15 +25,6 @@ repair_scene = ExtResource( 5 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 250, 360 )
-
-[node name="MusicLoop" type="AudioStreamPlayer2D" parent="Player"]
-position = Vector2( -85, -91.3333 )
-scale = Vector2( 0.333333, 0.333333 )
-stream = ExtResource( 6 )
-autoplay = true
-
-[node name="WaveMusicLoop" type="AudioStreamPlayer2D" parent="Player"]
-stream = ExtResource( 10 )
 
 [node name="ParallaxBackground" parent="." instance=ExtResource( 4 )]
 
