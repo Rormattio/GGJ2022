@@ -1,9 +1,0 @@
-{
-  "001": {"name":"Bang", "expression":"drawing/bang.png", "background":"drawing/background.png","text":"Quelle aventure quand même !"},
-  "002": {"name":"Bang", "expression":"drawing/bang.png", "background":"drawing/background.png","text":"Big, je dois te dire quelque chose..."},
-  "003": {"name":"Bang", "expression":"drawing/bang_happy.png", "background":"drawing/background.png","text":"Tu es le meilleur pilote et ami dont j'aurais pu rêver..."},
-  "004": {"name":"Bang", "expression":"drawing/bang_happy.png", "background":"drawing/background.png","text":"C'est un honneur de sauver des gens à tes côtés !"},
-  "005": {"name":"Big", "expression":"drawing/big.png", "background":"drawing/background.png","text":":)"},
-  "006": {"name":"Bang", "expression":"drawing/bang_happy.png", "background":"drawing/background.png","text":"Ohlala, je suis toute émue... Mais pas le temps de niaiser !"},
-  "007": {"name":"Bang", "expression":"drawing/bang_happy.png", "background":"drawing/background.png","text":"Quelqu'un quelque part à besoin de nous ! Alors c'est tipar !"}
-}

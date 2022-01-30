@@ -8,5 +8,12 @@
   "014": {"name":"Big", "expression":"drawing/big_flushed.png", "background":"drawing/background_hospital.png","text":"..."},
   "015": {"name":"Alarme", "expression":"", "background":"drawing/background_hospital.png","text":"WIOUWIOUWIOU"},
   "016": {"name":"Big", "expression":"drawing/big.png", "background":"drawing/background_hospital.png","text":"!"},
-  "017": {"name":"Bang", "expression":"drawing/bang_surprised.png", "background":"drawing/background_hospital.png","text":"Right Big, duty calls. Ciao !"}
+  "017": {"name":"Bang", "expression":"drawing/bang_surprised.png", "background":"drawing/background_hospital.png","text":"Right Big, duty calls. Ciao !"},
+  "018": {"name":"Bang", "expression":"drawing/bang.png", "background":"drawing/background.png","text":"Well that was a doozy !"},
+  "019": {"name":"Bang", "expression":"drawing/bang.png", "background":"drawing/background.png","text":"Big, I've got something to say..."},
+  "020": {"name":"Bang", "expression":"drawing/bang_happy.png", "background":"drawing/background.png","text":"You're the best pilot and friend I could have dreamed of."},
+  "021": {"name":"Bang", "expression":"drawing/bang_happy.png", "background":"drawing/background.png","text":"It's an honor to save people together with you !"},
+  "022": {"name":"Big", "expression":"drawing/big.png", "background":"drawing/background.png","text":":)"},
+  "023": {"name":"Bang", "expression":"drawing/bang_happy.png", "background":"drawing/background.png","text":"Aww, I'm getting teary-eyed... But there's no time to waste !"},
+  "024": {"name":"Bang", "expression":"drawing/bang_happy.png", "background":"drawing/background.png","text":"Someone, somewhere, needs us ! So let's get a move on !"}
 }
