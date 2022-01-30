@@ -18,7 +18,7 @@ func start(pos):
 	$PlayerParticle/CollisionParticle.set_deferred("disabled", false)
 	$PlayerWave/CollisionWave.set_deferred("disabled", true)
 	$AnimatedSprite.animation = "particle"
-	$AnimationSprite.play()
+#	$AnimationSprite.play()
 
 func change_state():
 	if $AnimatedSprite.animation == "particle" or $AnimatedSprite.animation == "gyro":
