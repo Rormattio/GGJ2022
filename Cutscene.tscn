@@ -74,7 +74,7 @@ margin_top = 669.0
 margin_right = 1265.0
 margin_bottom = 707.0
 custom_fonts/font = SubResource( 3 )
-text = "Appuyez sur [Espace] pour continuer"
+text = "Press the spacebar to continue"
 __meta__ = {
 "_edit_use_anchors_": false
 }
