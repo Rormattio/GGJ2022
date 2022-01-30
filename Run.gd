@@ -46,7 +46,7 @@ func new_game():
 	#$RepairTimer.start()
 	$RunTimer.start()
 	# Spawn ingame dialog
-	spawn_dict = load_spawn_dict("res://run_src/spawn_lvl_1.json")
+	spawn_dict = load_spawn_dict("res://assets/levels/spawn_lvl_1.json")
 	if (Global.scene_index == 0):
 		var character_dialog = character_prompt.instance()
 		add_child(character_dialog)
