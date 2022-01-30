@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/fonts/montreal/Montreal-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Cutscene.gd" type="Script" id=2]
@@ -10,6 +10,10 @@ font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 24
 font_data = ExtResource( 1 )
 
 [node name="Cutscene" type="Node2D"]
@@ -55,6 +59,18 @@ margin_right = 458.0
 margin_bottom = 514.0
 custom_fonts/font = SubResource( 2 )
 text = "Nom Place Au le deur"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tutoriel" type="Label" parent="."]
+visible = false
+margin_left = 809.0
+margin_top = 669.0
+margin_right = 1265.0
+margin_bottom = 707.0
+custom_fonts/font = SubResource( 3 )
+text = "Appuyez sur [Espace] pour continuer"
 __meta__ = {
 "_edit_use_anchors_": false
 }

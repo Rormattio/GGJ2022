@@ -9,9 +9,12 @@ signal dialogue_loaded(data)
 var dialogue_dict
 var _index_current = 0
 var _len_dialogue_dict
-var _config_file = "res://assets/text/intro.json"
+var _intro_config_file = "res://assets/text/intro.json"
+var _config_file = _intro_config_file
 
 func _init_config(config_file):
+	if config_file == _intro_config_file:
+		$Tutoriel.show()
 	_config_file = config_file
 
 func _ready():
@@ -37,19 +40,24 @@ func play_dialogue(dialog_dict):
 		$NameBox.hide() 
 	else:
 		$NameBox.show()
+	
 	$Background.texture = load("res://assets/"+dialog_dict[_index_current].background)
 	var size = $Background.texture.get_size()
 	var scale = Vector2((get_viewport_rect().size.x/size.x), (get_viewport_rect().size.y/size.y))
 	$Background.scale = scale
 	
-	$CharacterImage.texture = load("res://assets/"+dialog_dict[_index_current].expression)
-	if ($CharacterImage.texture):
-		size = $CharacterImage.texture.get_size()
-		scale = 1.4*get_viewport_rect().size.y/size.y
-		$CharacterImage.scale = Vector2(scale, scale)
+	if dialog_dict[_index_current].expression != '':
+		$CharacterImage.texture = load("res://assets/"+dialog_dict[_index_current].expression)
+		if ($CharacterImage.texture):
+			size = $CharacterImage.texture.get_size()
+			scale = 1.4*get_viewport_rect().size.y/size.y
+			$CharacterImage.scale = Vector2(scale, scale)
 
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
+		if _index_current == 0:
+			$Tutoriel.hide()
+		
 		_index_current += 1
 		if _index_current == _len_dialogue_dict:
 			get_tree().change_scene("res://Transition.tscn")
