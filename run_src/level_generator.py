@@ -3,26 +3,32 @@ import json
 
 def obstacle(obstacleType, position, speed):
     return {"type": obstacleType,
-            "location": list(position),
+            "location": [int(pos) for pos in position],
             "speed": speed
             }
 
+def make_line(nb_taxis, nb_ast, init_pos, speed, width, slope):
+    line = []
+    taxi_xdist, ast_ymargin, ast_xdist = 80, 130, 140
+    current_pos = np.array( init_pos, dtype='int' )
+    taxi_offset = np.array([0,width/2], dtype='int')
+    for _ in range(nb_taxis):
+        line.append( obstacle("taxi", current_pos - taxi_offset, speed) )
+        line.append( obstacle("taxi", current_pos + taxi_offset, speed) )
+        current_pos += np.array( np.array([1,slope]) * taxi_xdist, dtype='int')
+    current_pos = np.array( init_pos, dtype='int' )
+    for _ in range(nb_ast):
+        for i in range(3):
+            offset = np.array([0, width/2 + (i+1)*ast_ymargin], dtype='int')
+            line.append( obstacle("ast", current_pos - offset, speed) )
+            line.append( obstacle("ast", current_pos + offset, speed) )
+        current_pos += np.array( np.array([1, slope]) * ast_xdist, dtype='int')
+
+    return line
+
 t = '3'
-obs = {t: []}
-init_pos = np.array( [1400,500] )
-current_pos = init_pos[:]
-speed = [500,30]
-width = 200
-taxi_xdist = 80
-slope = 20
+obs = {
+        '1': make_line(15,10,[1400,300],[600,30],200,0.4)
+        }
 
-taxi_offset = np.array([0,width/2])
-for i in range(10):
-    obs[t].append( obstacle("taxi",current_pos - taxi_offset,speed) )
-    obs[t].append( obstacle("taxi",current_pos + taxi_offset,speed) )
-    current_pos += np.array([taxi_xdist,slope])
-
-print(json.dumps(obs,indent=2))
-
-ast_ymargin = 130
-ast_xdist = 150
+print(json.dumps(obs))
