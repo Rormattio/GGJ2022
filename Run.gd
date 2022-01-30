@@ -23,12 +23,8 @@ func game_over():
 #	#$ScoreTimer.stop()
 #	$ObstacleTimer.stop()
 	var cutscene_instance = preload("res://Cutscene.tscn").instance()
-	if(Global.scene_index == 0):
-		cutscene_instance._init_config("res://assets/text/scene1.json")
-	elif(Global.scene_index == 1):
-		cutscene_instance._init_config("res://assets/text/scene2.json")
+	cutscene_instance._init_config("res://assets/text/game_over.json")
 	get_parent().add_child(cutscene_instance)
-	Global.scene_index += 1
 	var run = get_parent().get_node("Run")
 	get_parent().remove_child(run)
 	run.call_deferred("free")
