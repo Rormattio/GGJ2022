@@ -60,7 +60,10 @@ func _input(event):
 		
 		_index_current += 1
 		if _index_current == _len_dialogue_dict:
-			get_tree().change_scene("res://Transition.tscn")
+			if Global.scene_index == 2:
+				get_tree().change_scene("res://End.tscn")
+			else:
+				get_tree().change_scene("res://Transition.tscn")
 			var level = get_parent().get_node("Cutscene")
 			get_parent().remove_child(level)
 			level.call_deferred("free")
