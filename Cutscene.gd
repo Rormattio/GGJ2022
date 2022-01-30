@@ -16,14 +16,14 @@ func _init_config(config_file):
 	if config_file == _intro_config_file:
 		$Tutoriel.show()
 	_config_file = config_file
+
+func _ready():
 	if Global.scene_index == 0:
 		$Audio.play()
 	elif Global.scene_index == 1:
 		$Audio_stress.play()
-	elif Global.scene_index == 2:
+	else:
 		$Audio_happy.play()
-
-func _ready():
 	dialogue_dict = load_dialogue(_config_file).values()
 	_len_dialogue_dict = len(dialogue_dict)
 	play_dialogue(dialogue_dict)
