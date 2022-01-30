@@ -2,7 +2,7 @@
   "001": {"name":"Bra", "expression":"drawing/bra.png", "background":"drawing/braket_background.png","text":"Come quick, come quick ! We need help!"},
   "009": {"name":"Bang", "expression":"drawing/bang_surprised.png", "background":"drawing/braket_background.png","text":"We're here, what's the emergency ?"},
   "010": {"name":"Bra", "expression":"drawing/bra.png", "background":"drawing/braket_background.png","text":"Ket-Chan… my wife… something's wrong with her !"},
-  "011": {"name":"Ket", "expression":"drawing/Ket.png", "background":"drawing/braket_background.png","text":"My baby is nearly there…"},
+  "011": {"name":"Ket", "expression":"drawing/ket.png", "background":"drawing/braket_background.png","text":"My baby is nearly there…"},
   "012": {"name":"Bra", "expression":"drawing/bra.png", "background":"drawing/braket_background.png","text":"Good heavens ! Do something !"},
   "013": {"name":"Bang", "expression":"drawing/bang_happy.png", "background":"drawing/braket_background.png","text":"Of course ! Get in the ambulance, we're gonna get you to the maternity clinic in a blink !"},
   "014": {"name":"Bang", "expression":"drawing/bang_happy.png", "background":"drawing/braket_background.png","text":"Aren't we, Big ?!"},
