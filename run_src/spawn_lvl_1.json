@@ -1,0 +1,23 @@
+{
+  "1": [{
+      "type":"asteroid",
+      "location":[800,100]
+  },{
+      "type":"asteroid",
+      "location":[800,200]
+  },{
+      "type":"asteroid",
+      "location":[800,300]
+  },{
+      "type":"asteroid",
+      "location":[800,400]
+  }
+  ],
+  "3": [{
+      "type":"taxi",
+      "location":[800,200]
+  },{
+      "type":"taxi",
+      "location":[800,400]
+  }]
+}
