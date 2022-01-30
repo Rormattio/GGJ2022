@@ -189,7 +189,7 @@ func _on_Player_gyro():
 		if child is Taxi:
 			taxis.append(child)
 	for taxi in taxis:
-		if taxi.position.y <360:
+		if taxi.position.y <$Player.position.y:
 			taxi.linear_velocity.y -= $Player.position.y*2
 		else:
 			taxi.linear_velocity.y += $Player.position.y*2
