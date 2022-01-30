@@ -1,23 +1,50 @@
 {
-  "1": [{
-      "type":"asteroid",
-      "location":[800,100]
+  "10": [{
+      "type":"taxi",
+      "location":[800,200],
+      "speed":[400,0]
   },{
-      "type":"asteroid",
-      "location":[800,200]
+      "type":"taxi",
+      "location":[900,200],
+      "speed":[400,200]
   },{
-      "type":"asteroid",
-      "location":[800,300]
-  },{
-      "type":"asteroid",
-      "location":[800,400]
+      "type":"taxi",
+      "location":[1000,200],
+      "speed":[400,-200]
   }
   ],
-  "3": [{
-      "type":"taxi",
-      "location":[800,200]
+  "20": [{
+      "type":"asteroid",
+      "location":[1000,100],
+      "speed":[500,80]
   },{
-      "type":"taxi",
-      "location":[800,400]
-  }]
+      "type":"asteroid",
+      "location":[1200,200],
+      "speed":[500,-80]
+  },{
+      "type":"asteroid",
+      "location":[1000,300],
+      "speed":[500,50]
+  },{
+      "type":"asteroid",
+      "location":[1200,400],
+      "speed":[500,-50]
+  },{
+      "type":"asteroid",
+      "location":[1000,500],
+      "speed":[500,-50]
+  },{
+      "type":"asteroid",
+      "location":[1200,500],
+      "speed":[500,-50]
+  },{
+      "type":"asteroid",
+      "location":[1200,1000],
+      "speed":[500,-50]
+  },{
+      "type":"asteroid",
+      "location":[1200,1000],
+      "speed":[500,-50]
+  }
+  ]
 }

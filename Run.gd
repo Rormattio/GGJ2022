@@ -62,22 +62,24 @@ func spawn_according_to(dict):
 			var x = descriptor.location[0]
 			var y = descriptor.location[1]
 			var type = descriptor.type
-			spawn_at(type,x,y)
+			var speed_x = descriptor.speed[0]
+			var speed_y = descriptor.speed[1]
+			spawn_at(type,x,y,speed_x,speed_y)
 
-func spawn_at(type,x,y):
+func spawn_at(type,x,y,speed_x,speed_y):
 	var pos = Vector2(x,y)
-	var direction = PI/2
+	var direction = PI
 	if type == "taxi":
 		var taxi = taxi_scene.instance()
 		add_child(taxi)
 		taxi.position = pos
-		var velocity = Vector2(rand_range(0.0, 1000.0), 0.0)
+		var velocity = Vector2(speed_x, speed_y)
 		taxi.linear_velocity = velocity.rotated(direction)
 	elif type == "asteroid":
 		var obstacle = obstacle_scene.instance()
 		add_child(obstacle)
 		obstacle.position = pos
-		var velocity = Vector2(rand_range(0.0, 1000.0), 0.0)
+		var velocity = Vector2(speed_x, speed_y)
 		obstacle.linear_velocity = velocity.rotated(direction)
 		
 func _process(delta):
