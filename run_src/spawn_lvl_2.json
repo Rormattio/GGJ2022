@@ -1,0 +1,79 @@
+{
+	"3": [
+		{
+		"type": "ast",
+		"location": [1400,120],
+		"speed": [500,30]
+		},
+		{
+		"type": "ast",
+		"location": [1400,250],
+		"speed": [500,30]
+		},
+		{
+		"type": "ast",
+		"location": [1400,120],
+		"speed": [500,30]
+		},
+		{
+		"type": "ast",
+		"location": [1400,250],
+		"speed": [500,30]
+		},
+		{
+		"type": "taxi",
+		"location": [1400,400],
+		"speed": [500,30]
+		},
+		{
+		"type": "taxi",
+		"location": [1480,420],
+		"speed": [500,30]
+		},
+		{
+		"type": "taxi",
+		"location": [1560,430],
+		"speed": [500,30]
+		},
+		{
+		"type": "taxi",
+		"location": [1620,440],
+		"speed": [500,30]
+		},
+		{
+		"type": "taxi",
+		"location": [1700,450],
+		"speed": [500,30]
+		},
+		{
+		"type": "taxi",
+		"location": [1320,570],
+		"speed": [500,30]
+		},
+		{
+		"type": "taxi",
+		"location": [1400,570],
+		"speed": [500,30]
+		},
+		{
+		"type": "taxi",
+		"location": [1480,570],
+		"speed": [500,30]
+		},
+		{
+		"type": "taxi",
+		"location": [1560,570],
+		"speed": [500,30]
+		},
+		{
+		"type": "taxi",
+		"location": [1620,570],
+		"speed": [500,30]
+		},
+		{
+		"type": "taxi",
+		"location": [1700,570],
+		"speed": [500,30]
+		}
+	]
+}
