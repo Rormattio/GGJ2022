@@ -1,4 +1,4 @@
 {
-  "001": {"name":"Bang", "expression":"drawing/bang.png", "background":"pixel_art/fondtest3.png","text":"Olala faut faire gaffe !"},
+  "001": {"name":"Bang", "expression":"drawing/bang.png", "background":"pixel_art/fondtest3.png","text":"Ohlala, faut faire gaffe !"},
   "009": {"name":"Big", "expression":"drawing/big_flushed.png", "background":"pixel_art/fondtest3.png","text":"!!"}
 }

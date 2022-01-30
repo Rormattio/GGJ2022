@@ -1,0 +1,12 @@
+{
+  "001": {"name":"Bra", "expression":"drawing/bra_happy.png", "background":"drawing/background_hospital.png","text":"Oh, thank you ! Than you so much ! I don't know what we would have done without you !"},
+  "009": {"name":"Bang", "expression":"drawing/bang_happy.png", "background":"drawing/background_hospital.png","text":"Haha, it's nothing ! We're only doing our jobs ! Right Big ?!"},
+  "010": {"name":"Big", "expression":"drawing/big.png", "background":"drawing/background_hospital.png","text":"..."},
+  "011": {"name":"Bra", "expression":"drawing/bra_happy.png", "background":"drawing/background_hospital.png","text":"Really, you were like a wish upon a falling star."},
+  "012": {"name":"Bra", "expression":"drawing/bra_happy.png", "background":"drawing/background_hospital.png","text":"We are eternally grateful !"},
+  "013": {"name":"Bang", "expression":"drawing/bang.png", "background":"drawing/background_hospital.png","text":"Aw, you're sweet... You're gonna make Big blush !"},
+  "014": {"name":"Big", "expression":"drawing/big_flushed.png", "background":"drawing/background_hospital.png","text":"..."},
+  "015": {"name":"Alarme", "expression":"", "background":"drawing/background_hospital.png","text":"WIOUWIOUWIOU"},
+  "016": {"name":"Big", "expression":"drawing/big.png", "background":"drawing/background_hospital.png","text":"!"},
+  "017": {"name":"Bang", "expression":"drawing/bang_surprised.png", "background":"drawing/background_hospital.png","text":"Right Big, duty calls. Ciao !"}
+}

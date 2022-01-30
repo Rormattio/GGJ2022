@@ -1,0 +1,4 @@
+{
+  "001": {"name":"Bang", "expression":"drawing/bang.png", "background":"pixel_art/fondtest3.png","text":"Agh ! We've gotta be more careful !"},
+  "009": {"name":"Big", "expression":"drawing/big_flushed.png", "background":"pixel_art/fondtest3.png","text":"!!"}
+}

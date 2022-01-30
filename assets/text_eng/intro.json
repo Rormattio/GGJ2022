@@ -1,0 +1,22 @@
+{
+  "001": {"name":"", "expression":"", "background":"pixel_art/fondtest3.png","text":"In the distant future…"},
+  "002": {"name":"", "expression":"", "background":"pixel_art/fondtest3.png","text":"The people of the universe have spread through the galaxies, exploring further and further..."},
+  "003": {"name":"", "expression":"", "background":"pixel_art/fondtest3.png","text":"The exploration outposts are far-away planets and remote satellites, where the residents live isolated from the Inter-Galaxy services..."},
+  "004": {"name":"", "expression":"", "background":"pixel_art/fondtest3.png","text":"In these harsh conditions, any medical emergency can be deadly if no medical care is given."},
+  "005": {"name":"", "expression":"", "background":"pixel_art/fondtest3.png","text":"But the people at the edges of the known universe can always count on the Star Paramedics, a group of professionals who drive the injured to the nearest hospital..."},
+  "006": {"name":"", "expression":"", "background":"pixel_art/fondtest3.png","text":"often on another planet !"},
+  "007": {"name":"", "expression":"", "background":"pixel_art/fondtest3.png","text":"Coincidentalliy, our heroes have just begun their career as Star Paramedics…"},
+  "008": {"name":"Bang", "expression":"drawing/bang_worried.png", "background":"drawing/background.png","text":"Oh dear ! I'm so scared I have a tummy-ache ! Don't you, Big ?"},
+  "009": {"name":"Big", "expression":"drawing/big.png", "background":"drawing/background.png","text":"..."},
+  "010": {"name":"Bang", "expression":"drawing/bang.png", "background":"drawing/background.png","text":"At least we got paired together. I feel better with you here !"},
+  "011": {"name":"Bang", "expression":"drawing/bang.png", "background":"drawing/background.png","text":"Still a chatterbox, are you ? No big deal, I'll take care of the patients, you can drive the ambulance..."},
+  "012": {"name":"Bang", "expression":"drawing/bang_happy.png", "background":"drawing/background.png","text":"Still, how exciting ! Saving distressed people while exploring the galaxy !"},
+  "013": {"name":"Bang", "expression":"drawing/bang_happy.png", "background":"drawing/background.png","text":"It's my childhood dream, and now it's for real !"},
+  "014": {"name":"Big", "expression":"drawing/big_flushed.png", "background":"drawing/background.png","text":"..."},
+  "015": {"name":"Bang", "expression":"drawing/bang.png", "background":"drawing/background.png","text":"Yeah, I know you feel the same !"},
+  "016": {"name":"Alarme", "expression":"", "background":"drawing/background.png","text":"WIOUWIOUWIOU"},
+  "017": {"name":"Big", "expression":"drawing/big.png", "background":"drawing/background.png","text":"!!!"},
+  "018": {"name":"Bang", "expression":"drawing/bang_surprised.png", "background":"drawing/background.png","text":"Aaaaaaaaahhh !! Look at the GPS coordinates !! We are the only ambulance around here, we've got to take it !!"},
+  "019": {"name":"Bang", "expression":"drawing/bang_surprised.png", "background":"drawing/background.png","text":"Our first mission !"},
+  "020": {"name":"Bang", "expression":"drawing/bang_happy.png", "background":"drawing/background.png","text":"No more simulations, it's for realsies, let's gooo !"}
+}

@@ -1,12 +1,12 @@
 {
-  "001": {"name":"Bra", "expression":"drawing/bra_happy.png", "background":"drawing/background_hospital.png","text":"Oh, merci ! Merci beaucoup ! Je ne sais pas ce que nous aurions fait sans vous!"},
-  "009": {"name":"Bang", "expression":"drawing/bang_happy.png", "background":"drawing/background_hospital.png","text":"Mais de rien voyons, on n’a fait que notre travail! Hein Big ?!"},
+  "001": {"name":"Bra", "expression":"drawing/bra_happy.png", "background":"drawing/background_hospital.png","text":"Oh, merci ! Merci beaucoup ! Je ne sais pas ce que nous aurions fait sans vous !"},
+  "009": {"name":"Bang", "expression":"drawing/bang_happy.png", "background":"drawing/background_hospital.png","text":"Mais de rien voyons, on n’a fait que notre travail ! Hein Big ?!"},
   "010": {"name":"Big", "expression":"drawing/big.png", "background":"drawing/background_hospital.png","text":"..."},
   "011": {"name":"Bra", "expression":"drawing/bra_happy.png", "background":"drawing/background_hospital.png","text":"Vraiment, vous êtes des anges tombés du ciel."},
   "012": {"name":"Bra", "expression":"drawing/bra_happy.png", "background":"drawing/background_hospital.png","text":"Nous vous serons éternellement reconnaissants !"},
-  "013": {"name":"Bang", "expression":"drawing/bang.png", "background":"drawing/background_hospital.png","text":"Rho, c’est gentil… Mais vous allez finir par faire rougir Big!"},
+  "013": {"name":"Bang", "expression":"drawing/bang.png", "background":"drawing/background_hospital.png","text":"Rho, c’est gentil... Mais vous allez finir par faire rougir Big !"},
   "014": {"name":"Big", "expression":"drawing/big_flushed.png", "background":"drawing/background_hospital.png","text":"..."},
   "015": {"name":"Alarme", "expression":"", "background":"drawing/background_hospital.png","text":"WIOUWIOUWIOU"},
   "016": {"name":"Big", "expression":"drawing/big.png", "background":"drawing/background_hospital.png","text":"!"},
-  "017": {"name":"Bang", "expression":"drawing/bang_surprised.png", "background":"drawing/background_hospital.png","text":"Tu as raison Big, le devoir nous appelle. C’est reparti!"}
+  "017": {"name":"Bang", "expression":"drawing/bang_surprised.png", "background":"drawing/background_hospital.png","text":"Tu as raison Big, le devoir nous appelle. C’est reparti !"}
 }
